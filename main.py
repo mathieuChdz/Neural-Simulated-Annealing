@@ -1,6 +1,9 @@
 import random
+import numpy as np
+import matplotlib.pyplot as plt
 from KnapsackProblem import KnapsackProblem
 from SimulatedAnnealing import SimulatedAnnealing
+from es_agent import ESAgent  # <-- On importe notre nouvel agent !
 
 def main():
     random.seed(42) 
@@ -11,21 +14,45 @@ def main():
 
     probleme = KnapsackProblem(poids, valeurs, capacite_max)
     
-    sa = SimulatedAnnealing(probleme, initial_temp=100.0, final_temp=0.1, n_steps=2000)
+    sa_classique = SimulatedAnnealing(probleme, initial_temp=100.0, final_temp=0.1, n_steps=2000)
     
-    meilleur_etat, meilleure_energie, historique = sa.solve()
+    meilleur_etat_c, meilleure_energie_c, historique_c = sa_classique.solve(log_filename="journal_sa_classique.txt")
     
-    print("\n--- RÉSULTATS ---")
-    print(f"Meilleure configuration (1=pris, 0=laissé) : {meilleur_etat}")
-    print(f"Poids total : {sum(s * p for s, p in zip(meilleur_etat, poids))} / {capacite_max}")
-    print(f"Valeur totale du sac : {-meilleure_energie}")
-    
+    print("\n--- RÉSULTATS CLASSIQUE ---")
+    print(f"Poids total : {sum(s * p for s, p in zip(meilleur_etat_c, poids))} / {capacite_max}")
+    print(f"Valeur totale du sac : {-meilleure_energie_c}")
 
-    print("\n--- DÉTAIL DES OBJETS ---")
-    for i in range(nb_objets):
-        statut = "Pris" if meilleur_etat[i] == 1 else "Laissé"
-        print(f"Objet {i+1:2d} | Poids : {poids[i]:2d} | Valeur : {valeurs[i]:2d} | Statut : {statut}")
-    print("-------------------------")
+
+    n_steps_sa = 2000
+    mon_agent_es = ESAgent(n_items=nb_objets, n_steps_per_episode=n_steps_sa, pop_size=10)
+
+    MODE_ENTRAINEMENT = False  
+
+    if MODE_ENTRAINEMENT:
+        print("-> DÉBUT DE L'ENTRAÎNEMENT (Veuillez patienter...)")
+        generations = 5000 
+        total_runs = mon_agent_es.pop_size * generations
+        
+        for run in range(total_runs):
+            sa_train = SimulatedAnnealing(probleme, initial_temp=100.0, final_temp=0.1, n_steps=n_steps_sa, agent=mon_agent_es)
+            sa_train.solve(log_filename="nul") # "nul" évite de créer un fichier à chaque fois
+            if (run + 1) % mon_agent_es.pop_size == 0:
+                print(f"   Génération {int((run + 1)/mon_agent_es.pop_size)}/{generations} évaluée et agent mis à jour.")
+
+        mon_agent_es.save("poids_agent_es.npy")
+    else:
+        print("-> CHARGEMENT DU MODÈLE PRÉ-ENTRAÎNÉ")
+        mon_agent_es.load("poids_agent_es.npy")
+
+
+    print("\n--- TEST FINAL DE L'AGENT ES ---")
+    sa_es = SimulatedAnnealing(probleme, initial_temp=100.0, final_temp=0.1, n_steps=n_steps_sa, agent=mon_agent_es)
+    meilleur_etat_es, meilleure_energie_es, historique_es = sa_es.solve(log_filename="journal_sa_es.txt")
+
+    print("\n--- RÉSULTATS AGENT ES ---")
+    print(f"Poids total : {sum(s * p for s, p in zip(meilleur_etat_es, poids))} / {capacite_max}")
+    print(f"Valeur totale du sac : {-meilleure_energie_es}")
+
 
 
 if __name__ == "__main__":
