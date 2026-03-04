@@ -18,7 +18,7 @@ class KnapsackProblem(OptimizationProblem):
         voisin[idx_to_flip] = 1 - voisin[idx_to_flip] # 0 vers 1 et 1 vers 0
         return voisin, idx_to_flip 
         
-    def get_energy(self, state):
+    def energy(self, state):
         total_weight = sum(s * w for s, w in zip(state, self.poids))
         total_value = sum(s * v for s, v in zip(state, self.valeur))
         

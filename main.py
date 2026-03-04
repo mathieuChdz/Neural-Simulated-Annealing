@@ -3,11 +3,11 @@ from KnapsackProblem import KnapsackProblem
 from SimulatedAnnealing import SimulatedAnnealing
 
 def main():
-    random.seed(42) 
-    nb_objets = 20
+    random.seed(72) 
+    nb_objets = 50
     poids = [random.randint(1, 20) for _ in range(nb_objets)]
     valeurs = [random.randint(10, 50) for _ in range(nb_objets)]
-    capacite_max = 100
+    capacite_max = 150
 
     probleme = KnapsackProblem(poids, valeurs, capacite_max)
     
