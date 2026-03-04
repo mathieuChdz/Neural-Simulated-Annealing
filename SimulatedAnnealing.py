@@ -23,6 +23,12 @@ class SimulatedAnnealing:
 
         with open(log_filename, "w", encoding="utf-8") as f:
             f.write("=== DÉBUT DU RECUIT SIMULÉ ===\n")
+
+            if self.agent is not None:
+                f.write("Mode : NEURAL SA\n")
+            else:
+                f.write("Mode : SA CLASSIQUE\n")
+
             f.write(f"Température initiale : {self.initial_temp} | Itérations : {self.n_steps}\n\n")
             
             for k in range(self.n_steps):
