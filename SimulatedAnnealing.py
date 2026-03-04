@@ -4,12 +4,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 class SimulatedAnnealing:
-    def __init__(self, problem, initial_temp=100.0, final_temp=0.1, n_steps=1000):
+    def __init__(self, problem, initial_temp=100.0, final_temp=0.1, n_steps=1000, agent=None):
         self.problem = problem
         self.initial_temp = initial_temp
         self.final_temp = final_temp
         self.n_steps = n_steps
         self.alpha = (final_temp / initial_temp) ** (1 / n_steps) # TK=Ti*a^K => a=(TK/Ti)^(1/K) temperature a letape k = temperature a letat initial * alpha^k par definition du SA
+        self.agent = agent
 
     def solve(self, log_filename="journal_sa.txt"):
         current_state = self.problem.etat_initial()
@@ -25,7 +26,14 @@ class SimulatedAnnealing:
             f.write(f"Température initiale : {self.initial_temp} | Itérations : {self.n_steps}\n\n")
             
             for k in range(self.n_steps):
-                voisin, action = self.problem.voisinage(current_state)
+                
+                if self.agent is not None:
+                    voisin, action = self.agent.voisinage(current_state, self.problem)
+                else:
+                    voisin, action = self.problem.voisinage(current_state)
+
+
+
                 voisin_energy = self.problem.get_energy(voisin)
                 
                 delta_e = voisin_energy - current_energy
@@ -58,6 +66,16 @@ class SimulatedAnnealing:
                 f.write(f"Différence d'énergie (Delta E) : {delta_e}\n")
                 f.write(f"Probabilité d'accepter : {proba_acceptation:.4f} (Tirage du hasard : {tirage_aleatoire:.4f})\n")
                 
+
+                if self.agent is not None:
+                    if accepte:
+                        recompense = -delta_e
+                    else:
+                        recompense = -10000
+
+                    self.agent.learn(current_state, action, recompense, voisin)
+            
+
                 if accepte:
                     f.write("=> Résultat : ACCEPTÉ \n\n")
                     current_state = voisin
@@ -68,7 +86,6 @@ class SimulatedAnnealing:
                         best_state = current_state
                 else:
                     f.write("=> Résultat : REFUSÉ \n\n")
-                        
                 history_energy.append(current_energy)
                 temp *= self.alpha 
                 
