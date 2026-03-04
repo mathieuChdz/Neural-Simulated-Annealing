@@ -76,10 +76,12 @@ class SimulatedAnnealing:
                 if self.agent is not None:
                     if accepte:
                         recompense = -delta_e
+                        next_state = voisin
                     else:
                         recompense = -10000
+                        next_state = current_state
 
-                    self.agent.learn(current_state, action, recompense, voisin)
+                    self.agent.learn(current_state, action, recompense, next_state, self.problem)
             
 
                 if accepte:
