@@ -96,10 +96,23 @@ class PPOAgent:
     
     def act(self, state):
         state = torch.FloatTensor(state).unsqueeze(0)
-        dist = self.policy(state) 
+        dist = self.policy(state)
         action = dist.sample()
         log_prob = dist.log_prob(action)
         return action.item(), log_prob.detach()
     
     def store(self, state, action, log_prob, reward, done):
         self.memory.append((state, action, log_prob, reward, done))
+
+
+    def save(self, path):
+        torch.save({
+            'policy_state': self.policy.state_dict(),
+            'value_state': self.value.state_dict(),
+        }, path)
+    
+
+    def load(self, path):
+        checkpoint = torch.load(path)
+        self.policy.load_state_dict(checkpoint['policy_state'])
+        self.value.load_state_dict(checkpoint['value_state'])

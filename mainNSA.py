@@ -7,11 +7,11 @@ from agents.ppo import PPOAgent
 
 
 def main():
-    random.seed(42) 
-    nb_objets = 50
+    random.seed(62) 
+    nb_objets = 100
     poids = [random.randint(1, 20) for _ in range(nb_objets)]
     valeurs = [random.randint(10, 50) for _ in range(nb_objets)]
-    capacite_max = 150
+    capacite_max = int(sum(poids) * 0.4)
 
     probleme = kpnsa(poids, valeurs, capacite_max)
     
@@ -20,13 +20,12 @@ def main():
 
     agent = PPOAgent(state_dim, action_dim)
 
+    agent.load("agents/ppo_model.pth")
+
     sa = SimulatedAnnealing(probleme, initial_temp=100.0, final_temp=0.1, n_steps=2000, agent=agent)
     
-
-    for episode in range(50):
-        meilleur_etat, meilleure_energie, _ = sa.solve() #La je recupere pas les historiques 
-        print(f"Episode {episode} terminé")     
-
+    meilleur_etat, meilleure_energie, _ = sa.solve()
+ 
     
     print("\n--- RÉSULTATS NSA ---")
     print(f"Meilleure configuration : {meilleur_etat}")
