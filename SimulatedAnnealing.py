@@ -78,7 +78,7 @@ class SimulatedAnnealing:
                         recompense = -delta_e
                         next_state = voisin
                     else:
-                        recompense = -10000
+                        recompense = 0
                         next_state = current_state
 
                     self.agent.learn(current_state, action, recompense, next_state, self.problem)

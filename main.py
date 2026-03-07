@@ -6,7 +6,6 @@ from SimulatedAnnealing import SimulatedAnnealing
 from es_agent import ESAgent  # <-- On importe notre nouvel agent !
 
 def main():
-    random.seed(42) 
     nb_objets = 20
     poids = [random.randint(1, 20) for _ in range(nb_objets)]
     valeurs = [random.randint(10, 50) for _ in range(nb_objets)]
@@ -30,7 +29,7 @@ def main():
 
     if MODE_ENTRAINEMENT:
         print("-> DÉBUT DE L'ENTRAÎNEMENT (Veuillez patienter...)")
-        generations = 5000 
+        generations = 5000
         total_runs = mon_agent_es.pop_size * generations
         
         for run in range(total_runs):
