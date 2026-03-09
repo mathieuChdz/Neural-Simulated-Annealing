@@ -22,12 +22,20 @@ class NeuralSimulatedAnnealing:
 
         for k in range(self.n_steps):
 
-            # Choix action
+            # === Construction du state tensor pour item/bin factorized ===
             if self.agent is not None:
-                state_tensor = torch.FloatTensor(self.problem.state_to_tensor(current_state)).unsqueeze(0)
+                state_tensor = {
+                    'weights': self.problem.items,
+                    'bins': current_state,
+                    'bin_remaining': [self.problem.bin_capacity - sum(
+                        self.problem.items[idx] for idx, b in enumerate(current_state) if b == j
+                    ) for j in range(self.problem.n_bins)],
+                    'temp': temp
+                }
                 action, log_prob = self.agent.act(state_tensor)
                 next_state = self.problem.apply_action(current_state, action)
             else:
+                # Vanilla random
                 action = random.randint(0, self.problem.action_space() - 1)
                 next_state = self.problem.apply_action(current_state, action)
 
@@ -47,9 +55,10 @@ class NeuralSimulatedAnnealing:
                     best_state = current_state.copy()
                     best_energy = current_energy
 
+            # Temperature update
             temp *= self.alpha
 
-            # Update PPO every 200 steps
+            # Optional: update every 200 steps
             if self.agent is not None and (k+1) % 200 == 0:
                 self.agent.update()
 

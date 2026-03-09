@@ -4,8 +4,8 @@ from NeuralSimulatedAnnealing import NeuralSimulatedAnnealing
 
 def main():
     random.seed(62)
-    n_items = 50
-    n_bins = 20
+    n_items = 100
+    n_bins = 50
     bin_capacity = 100
     items = [random.randint(5, 20) for _ in range(n_items)]
 

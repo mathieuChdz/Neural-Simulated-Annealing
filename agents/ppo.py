@@ -4,81 +4,110 @@ import torch.optim as optim
 from torch.distributions import Categorical
 import numpy as np
 
-class PolicyNetwork(nn.Module):
-    def __init__(self, state_dim, action_dim):
+# === Réseau léger pour sélectionner un item ===
+class ItemPolicyNetwork(nn.Module):
+    def __init__(self):
         super().__init__()
         self.model = nn.Sequential(
-            nn.Linear(state_dim, 128),
+            nn.Linear(3, 16),  # [wi, b(i), T]
             nn.ReLU(),
-            nn.Linear(128, action_dim)
+            nn.Linear(16, 1)
         )
 
     def forward(self, x):
-        return Categorical(logits=self.model(x))
+        return self.model(x)
 
-class TemperatureNetwork(nn.Module):
-    def __init__(self, state_dim):
+# === Réseau léger pour sélectionner un bin conditionnel sur l'item ===
+class BinPolicyNetwork(nn.Module):
+    def __init__(self):
         super().__init__()
         self.model = nn.Sequential(
-            nn.Linear(state_dim, 64),
+            nn.Linear(3, 16),  # [wi, cj, T]
             nn.ReLU(),
-            nn.Linear(64, 1),
-            nn.Softplus()  # T > 0
+            nn.Linear(16, 1)
         )
 
     def forward(self, x):
         return self.model(x)
 
 class PPOAgent:
-    def __init__(self, state_dim, action_dim, lr=3e-4):
-        self.policy = PolicyNetwork(state_dim, action_dim)
-        self.temp_net = TemperatureNetwork(state_dim)
+    def __init__(self, n_items, n_bins, lr=3e-4):
+        self.n_items = n_items
+        self.n_bins = n_bins
+        self.item_net = ItemPolicyNetwork()
+        self.bin_net = BinPolicyNetwork()
         self.optimizer = optim.Adam(
-            list(self.policy.parameters()) + list(self.temp_net.parameters()), lr=lr
+            list(self.item_net.parameters()) + list(self.bin_net.parameters()), lr=lr
         )
         self.memory = []
 
-    def act(self, state):
-        if not isinstance(state, torch.Tensor):
-            state = torch.FloatTensor(state).unsqueeze(0)
-        dist = self.policy(state)
-        action = dist.sample()
-        log_prob = dist.log_prob(action)
-        return action.item(), log_prob.detach()
+    # Échantillonnage ancestral
+    def act(self, state_tensor):
+        """
+        state_tensor : dict contenant
+            - 'weights' : list poids items
+            - 'bins' : current bins des items
+            - 'temp' : temperature float
+        """
+        wi_list = state_tensor['weights']
+        bi_list = state_tensor['bins']
+        T = state_tensor['temp']
 
-    def act_temperature(self, state):
-        if not isinstance(state, torch.Tensor):
-            state = torch.FloatTensor(state).unsqueeze(0)
-        t = self.temp_net(state)
-        return t.item()
+        # === Item selection ===
+        item_logits = []
+        for i, wi in enumerate(wi_list):
+            x = torch.tensor([wi, bi_list[i], T], dtype=torch.float32)
+            item_logits.append(self.item_net(x))
+        item_logits = torch.cat(item_logits)
+        item_probs = torch.softmax(item_logits, dim=0)
+        item_dist = Categorical(item_probs)
+        i = item_dist.sample()
+        log_prob_item = item_dist.log_prob(i)
+
+        # === Bin selection conditionnelle ===
+        cj_list = state_tensor['bin_remaining']  # list of remaining capacities
+        bin_logits = []
+        for j, cj in enumerate(cj_list):
+            x = torch.tensor([wi_list[i], cj, T], dtype=torch.float32)
+            bin_logits.append(self.bin_net(x))
+        bin_logits = torch.cat(bin_logits)
+        bin_probs = torch.softmax(bin_logits, dim=0)
+        bin_dist = Categorical(bin_probs)
+        j = bin_dist.sample()
+        log_prob_bin = bin_dist.log_prob(j)
+
+        # Stockage pour PPO
+        self.last_state = state_tensor
+        self.last_action = (i.item(), j.item())
+        self.last_log_prob = log_prob_item + log_prob_bin
+
+        return (i.item(), j.item()), self.last_log_prob.detach()
 
     def store(self, state, action, log_prob, reward, done):
         self.memory.append((state, action, log_prob, reward, done))
 
-    def update(self, epochs=4):
+    def update(self, epochs=4, gamma=0.99):
         if len(self.memory) == 0:
             return
 
-        states = torch.FloatTensor(np.array([m[0].squeeze() if isinstance(m[0], torch.Tensor) else m[0] for m in self.memory]))
-        actions = torch.LongTensor([m[1] for m in self.memory])
-        old_log_probs = torch.stack([m[2] for m in self.memory])
-        rewards = [m[3] for m in self.memory]
-
+        # Préparer batch
         returns = []
         G = 0
-        gamma = 0.99
-        for r in reversed(rewards):
-            G = r + gamma * G
+        for _, _, _, reward, _ in reversed(self.memory):
+            G = reward + gamma * G
             returns.insert(0, G)
-        returns = torch.FloatTensor(returns)
+        returns = torch.tensor(returns, dtype=torch.float32)
         returns = (returns - returns.mean()) / (returns.std() + 1e-8)
 
         for _ in range(epochs):
-            dist = self.policy(states)
-            new_log_probs = dist.log_prob(actions)
-            ratio = torch.exp(new_log_probs - old_log_probs)
-            advantage = returns
-            loss = -torch.min(ratio * advantage, torch.clamp(ratio, 0.8, 1.2) * advantage).mean()
+            losses = []
+            for idx, (state, action, log_prob, reward, done) in enumerate(self.memory):
+                _, new_log_prob = self.act(state)
+                ratio = torch.exp(new_log_prob - log_prob)
+                advantage = returns[idx]
+                loss = -torch.min(ratio * advantage, torch.clamp(ratio, 0.8, 1.2) * advantage)
+                losses.append(loss)
+            loss = torch.stack(losses).mean()
             self.optimizer.zero_grad()
             loss.backward()
             self.optimizer.step()
@@ -87,11 +116,11 @@ class PPOAgent:
 
     def save(self, path):
         torch.save({
-            'policy_state': self.policy.state_dict(),
-            'temp_state': self.temp_net.state_dict()
+            'item_state': self.item_net.state_dict(),
+            'bin_state': self.bin_net.state_dict()
         }, path)
 
     def load(self, path):
         checkpoint = torch.load(path)
-        self.policy.load_state_dict(checkpoint['policy_state'])
-        self.temp_net.load_state_dict(checkpoint['temp_state'])
+        self.item_net.load_state_dict(checkpoint['item_state'])
+        self.bin_net.load_state_dict(checkpoint['bin_state'])
