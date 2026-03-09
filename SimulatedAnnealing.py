@@ -39,8 +39,8 @@ class SimulatedAnnealing:
 
             else:
 
-                voisin, action = self.problem.voisinage(current_state)
-
+                action = random.randint(0, self.problem.action_space() - 1)
+                voisin = self.problem.apply_action(current_state, action)
             voisin_energy = self.problem.energy(voisin)
 
             delta = voisin_energy - current_energy
@@ -56,7 +56,7 @@ class SimulatedAnnealing:
 
             if self.agent is not None:
 
-                reward = math.tanh(current_energy - voisin_energy)
+                reward = current_energy - voisin_energy
                 self.agent.store(state_tensor, action, log_prob, reward, False)
 
             if accept:

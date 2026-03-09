@@ -1,97 +1,75 @@
+# compare_results_simple.py
+
 import random
 import numpy as np
+import os
+import torch
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '.')))
 
-from BinPackingProblem import BinPackingProblem
-from BinPackingProblemNSA import BinPackingProblem as BinPackingProblemNSA
+from BinPackingProblemNSA import BinPackingProblemNSA
+from NeuralSimulatedAnnealing import NeuralSimulatedAnnealing
 from SimulatedAnnealing import SimulatedAnnealing
 from agents.ppo import PPOAgent
 
+# ===== Paramètres =====
+SIZES = [50, 100, 200]  # exemple : tu peux ajouter 500, 1000, 2000 si tu as entraîné les modèles
+SIZE = [50] 
+N_INSTANCES = 5  # nombre d'instances test
+BIN_CAPACITY = 100
+MODEL_DIR = "agents"
 
-# tailles testées
-sizes = [50,100,200,500,1000,2000]
+random.seed(42)
+torch.manual_seed(42)
 
-# paramètres
-n_seeds = 5
-instances_per_seed = 20
-
-def run_experiment():
-
+def run_comparison():
     results = []
 
-    for N in sizes:
-
-        print("\nRunning experiments for N =", N)
-
+    for N in SIZE:
+        print(f"\n--- Test pour N={N} ---")
         vanilla_scores = []
-        neural_scores = []
+        ppo_scores = []
 
-        for seed in range(n_seeds):
+        # Charger le modèle PPO correspondant
+        state_dim = N * N + 1
+        action_dim = N * N
+        agent = PPOAgent(state_dim=state_dim, action_dim=action_dim)
+        model_path = os.path.join(MODEL_DIR, f"ppo_model_{N}.pth")
+        if os.path.exists(model_path):
+            agent.load(model_path)
+        else:
+            print(f"⚠️  Attention : {model_path} introuvable. PPO non utilisé pour N={N}")
+            agent = None
 
-            random.seed(seed)
+        for _ in range(N_INSTANCES):
+            items = [random.randint(5, 20) for _ in range(N)]
+            n_bins = N
+            problem = BinPackingProblemNSA(items, BIN_CAPACITY, n_bins)
 
-            for _ in range(instances_per_seed):
+            # --- Vanilla SA ---
+            sa_vanilla = SimulatedAnnealing(problem, n_steps=1000)
+            _, energy_vanilla, _ = sa_vanilla.solve()
+            vanilla_scores.append(energy_vanilla)
 
-                weights = [random.randint(1,10) for _ in range(N)]
-                capacity = 15
-
-
-                # ---------- Vanilla SA ----------
-
-                problem = BinPackingProblem(weights, capacity)
-
-                sa = SimulatedAnnealing(
-                    problem,
-                    initial_temp=100,
-                    final_temp=0.1,
-                    n_steps=2000
-                )
-
-                _, energy_vanilla, _ = sa.solve()
-
-                vanilla_scores.append(energy_vanilla)
-
-
-                # ---------- Neural SA ----------
-
-                problem_nsa = BinPackingProblemNSA(weights, capacity)
-
-                state_dim = 2*N + 1
-                action_dim = N*N
-
-                agent = PPOAgent(state_dim, action_dim)
-
-                agent.load(f"agents/ppo_model_{N}.pth")
-
-                sa_nsa = SimulatedAnnealing(
-                    problem_nsa,
-                    initial_temp=100,
-                    final_temp=0.1,
-                    n_steps=2000,
-                    agent=agent
-                )
-
-                _, energy_neural, _ = sa_nsa.solve()
-
-                neural_scores.append(energy_neural)
-
+            # --- PPO (Neural SA) ---
+            if agent:
+                sa_ppo = NeuralSimulatedAnnealing(problem, n_steps=1000, agent=agent)
+                _, energy_ppo = sa_ppo.solve()
+                ppo_scores.append(energy_ppo)
 
         vanilla_mean = np.mean(vanilla_scores)
-        neural_mean = np.mean(neural_scores)
+        ppo_mean = np.mean(ppo_scores) if ppo_scores else float('nan')
 
-        results.append((N, vanilla_mean, neural_mean))
+        results.append((N, vanilla_mean, ppo_mean))
 
-
-    print("\n===== RESULTS =====")
-
-    print(f"{'N':>6} | {'Vanilla SA':>12} | {'Neural SA':>12}")
+    # ===== Affichage du tableau =====
+    print("\n=== Résultats comparatifs ===")
+    print(f"{'N':>6} | {'Vanilla SA':>12} | {'PPO SA':>10}")
     print("-"*36)
-
     for r in results:
-
-        N,v,n = r
-        print(f"{N:>6} | {v:>12.2f} | {n:>12.2f}")
-
+        N, v, p = r
+        print(f"{N:>6} | {v:>12.2f} | {p:>10.2f}")
+        
 
 if __name__ == "__main__":
-
-    run_experiment()
+    run_comparison()

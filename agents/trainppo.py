@@ -1,47 +1,35 @@
 import random
-import sys
 import os
-
+import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from SimulatedAnnealing import SimulatedAnnealing
-from BinPackingProblemNSA import BinPackingProblem
+from BinPackingProblemNSA import BinPackingProblemNSA
+from NeuralSimulatedAnnealing import NeuralSimulatedAnnealing
 from agents.ppo import PPOAgent
-
+import torch
 
 def train():
+    random.seed(42)
+    torch.manual_seed(42)
 
-    n_items = 50
+    n_items = 100
+    n_bins = 100
+    bin_capacity = 100
 
-    state_dim = 2 * n_items + 1
-    action_dim = n_items * n_items
+    agent = PPOAgent(state_dim=n_items*n_bins + 1, action_dim=n_items*n_bins)
 
-    agent = PPOAgent(state_dim, action_dim)
+    n_instances = 50
+    n_steps = 1000
 
-    n_instances = 200
+    for ep in range(n_instances):
+        items = [random.randint(5, 100) for _ in range(n_items)]
+        problem = BinPackingProblemNSA(items, bin_capacity, n_bins)
+        sa = NeuralSimulatedAnnealing(problem, n_steps=n_steps, agent=agent)
+        best_state, best_energy = sa.solve()
+        print(f"[Episode {ep+1}/{n_instances}] Bins utilisés: {best_energy}")
 
-    for episode in range(n_instances):
-
-        weights = [random.randint(1, 10) for _ in range(n_items)]
-
-        capacity = 15
-
-        problem = BinPackingProblem(weights, capacity)
-
-        sa = SimulatedAnnealing(
-            problem,
-            initial_temp=100,
-            final_temp=0.1,
-            n_steps=2000,
-            agent=agent
-        )
-
-        best_state, best_energy, _ = sa.solve()
-
-        print("episode:", episode, "bins:", best_energy)
-
-    agent.save("agents/ppo_model.pth")
-
+    agent.save("agents/ppo_model100.pth")
+    print("Modèle PPO sauvegardé !")
 
 if __name__ == "__main__":
     train()
