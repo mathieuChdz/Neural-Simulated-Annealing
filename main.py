@@ -7,10 +7,10 @@ from es_agent import ESAgent
 import os
 
 def main():
-    nb_objets = 20
-    poids = [random.randint(1, 20) for _ in range(nb_objets)]
-    valeurs = [random.randint(10, 50) for _ in range(nb_objets)]
-    capacite_max = 100
+    nb_objets = 100
+    poids = [random.uniform(0,1) for _ in range(nb_objets)]
+    valeurs = [random.uniform(0,1) for _ in range(nb_objets)]
+    capacite_max = nb_objets/4
 
     probleme = KnapsackProblem(poids, valeurs, capacite_max)
     
