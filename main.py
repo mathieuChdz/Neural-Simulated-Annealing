@@ -3,7 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from KnapsackProblem import KnapsackProblem
 from SimulatedAnnealing import SimulatedAnnealing
-from es_agent import ESAgent  # <-- On importe notre nouvel agent !
+from es_agent import ESAgent
+import os
 
 def main():
     nb_objets = 20
@@ -29,6 +30,11 @@ def main():
 
     if MODE_ENTRAINEMENT:
         print("-> DÉBUT DE L'ENTRAÎNEMENT (Veuillez patienter...)")
+        if os.path.exists("poids_agent_es.npy"):
+            print("   (Ancien cerveau détecté : Reprise de l'entraînement !)")
+            mon_agent_es.load("poids_agent_es.npy")
+        else:
+            print("   (Aucun cerveau détecté : Entraînement depuis zéro.)")
         generations = 5000
         total_runs = mon_agent_es.pop_size * generations
         

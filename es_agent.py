@@ -5,11 +5,11 @@ class ESAgent:
     def __init__(self, n_items, n_steps_per_episode, pop_size=10, sigma=0.1, lr=0.05):
         self.n_items = n_items
         self.n_steps_per_episode = n_steps_per_episode
-        self.pop_size = pop_size  # Nombre de mutants par génération
-        self.sigma = sigma        # Quantité de bruit (mutation)
+        self.pop_size = pop_size  # Nombre de mutants 
+        self.sigma = sigma        # bruit
         self.lr = lr              # Taux d'apprentissage
         
-        self.theta = np.zeros(4) # Les "poids" de notre réseau de neurones (initialisés à 0)
+        self.theta = np.zeros(4) # Les poids de base
         
         self._reset_population()
         
@@ -44,12 +44,7 @@ class ESAgent:
             score = current_theta[0]*f1 + current_theta[1]*f2 + current_theta[2]*f3 + current_theta[3]*f4
             scores.append(score)
             
-        # L'action choisie est celle qui a le meilleur score selon le réseau
-        # On garde 5% de hasard pour éviter les boucles infinies 
-        if random.random() < 0.05:
-            action = random.randint(0, problem.n_items - 1)
-        else:
-            action = np.argmax(scores)
+        action = np.argmax(scores)
         
         # On construit le voisin
         voisin = list(state)
