@@ -3,7 +3,7 @@ from KnapsackProblem import KnapsackProblem
 from SimulatedAnnealing import SimulatedAnnealing
 
 def main():
-    random.seed(62) 
+    random.seed(2)
     nb_objets = 100
     poids = [random.uniform(0, 1) for _ in range(nb_objets)]
     valeurs = [random.uniform(0, 1) for _ in range(nb_objets)]
@@ -12,14 +12,24 @@ def main():
 
     probleme = KnapsackProblem(poids, valeurs, capacite_max)
     
-    sa = SimulatedAnnealing(probleme, initial_temp=100.0, final_temp=0.1, n_steps=2000)
+    res_sum = 0
+
+    for i in range(5):
+
+        sa = SimulatedAnnealing(probleme, initial_temp=1.0, final_temp=0.1, n_steps=5000)
+        
+        meilleur_etat, meilleure_energie, _ = sa.solve()
+
+        print(f"Run {i+1} | Meilleure énergie : {-meilleure_energie:.4f}")
+
+        res_sum += -meilleure_energie
     
-    meilleur_etat, meilleure_energie, historique = sa.solve()
-    
+    res_mean = res_sum / 5
+
     print("\n--- RÉSULTATS ---")
     print(f"Meilleure configuration (1=pris, 0=laissé) : {meilleur_etat}")
     print(f"Poids total : {sum(s * p for s, p in zip(meilleur_etat, poids))} / {capacite_max}")
-    print(f"Valeur totale du sac : {-meilleure_energie}")
+    print(f"Valeur totale du sac : {res_mean:.4f}")
     
 
     print("\n--- DÉTAIL DES OBJETS ---")

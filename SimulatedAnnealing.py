@@ -81,13 +81,13 @@ class SimulatedAnnealing:
 
                 if self.agent is not None:
                     if accepte:
-                        reward = math.tanh(current_energy - voisin_energy)
+                        reward = current_energy - voisin_energy
                         next_state = voisin
                     else:
-                        reward = math.tanh(current_energy - voisin_energy) #rewart plus stable que -10000
+                        reward = current_energy - voisin_energy #reward plus stable que -10000
                         next_state = current_state
 
-                    self.agent.store(state_tensor, action, log_prob, reward, False)
+                    self.agent.store(state_tensor, action, log_prob, reward, True)
             
 
                 if accepte:
@@ -104,8 +104,8 @@ class SimulatedAnnealing:
                 temp *= self.alpha 
 
             
-            if self.agent is not None:
-                self.agent.update()
+            # if self.agent is not None:
+            #     self.agent.update()
                 
             f.write("=== FIN DE L'OPTIMISATION ===\n")
             f.write(f"Meilleure énergie trouvée : {best_energy}\n")

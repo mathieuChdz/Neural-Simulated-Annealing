@@ -7,7 +7,7 @@ from agents.ppo import PPOAgent
 
 
 def main():
-    random.seed(62) 
+    random.seed(62)
     nb_objets = 100
     poids = [random.uniform(0, 1) for _ in range(nb_objets)]
     valeurs = [random.uniform(0, 1) for _ in range(nb_objets)]
@@ -21,15 +21,17 @@ def main():
 
     agent = PPOAgent(state_dim, action_dim)
 
-    agent.load("agents/ppo_model.pth")
+    agent.load("agents/ppo_model_100.pth")
 
     res_sum = 0
 
     for i in range(5):
 
-        sa = SimulatedAnnealing(probleme, initial_temp=100.0, final_temp=0.1, n_steps=2000, agent=agent)
+        sa = SimulatedAnnealing(probleme, initial_temp=1.0, final_temp=0.1, n_steps=5000, agent=agent)
         
         meilleur_etat, meilleure_energie, _ = sa.solve()
+
+        print(f"Run {i+1} | Meilleure énergie : {-meilleure_energie:.4f}")
 
         res_sum += -meilleure_energie
     
