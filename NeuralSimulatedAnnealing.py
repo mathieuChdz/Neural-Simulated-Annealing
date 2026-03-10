@@ -24,6 +24,7 @@ class NeuralSimulatedAnnealing:
             # --- temperature ---
             if self.agent:
                 temp = self.agent.act_temperature(progress)
+                temp = max(0.01, min(100.0, temp))
             else:
                 temp *= alpha
 
@@ -53,11 +54,7 @@ class NeuralSimulatedAnnealing:
 
             # reward pour PPO
             if self.agent:
-                if accepted:
-                    reward = -delta
-                else:
-                    reward = -1.0   # pénalité si move refusé
-
+                reward = energy - next_energy
                 self.agent.store(state_tensor, action, log_prob, reward, False)
             # update PPO every 200 steps
             if self.agent and (k+1) % 200 == 0:

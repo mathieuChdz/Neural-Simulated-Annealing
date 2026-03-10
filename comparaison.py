@@ -38,7 +38,7 @@ def run_comparison():
         if os.path.exists(model_path):
             agent.load(model_path)
         else:
-            print(f"⚠️  Attention : {model_path} introuvable. PPO non utilisé pour N={N}")
+            print(f"  Attention : {model_path} introuvable. PPO non utilisé pour N={N}")
             agent = None
 
         for _ in range(N_INSTANCES):

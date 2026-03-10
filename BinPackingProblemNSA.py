@@ -20,7 +20,7 @@ class BinPackingProblemNSA:
             one_hot = [0] * self.n_bins
             one_hot[b] = 1
             tensor.extend(one_hot)
-        tensor.append(temp)
+        tensor.append(temp / 100.0)  # normaliser la température
         return np.array(tensor, dtype=np.float32)
 
     def apply_action(self, state, action):
