@@ -19,13 +19,17 @@ def train():
 
     agent = PPOAgent(state_dim, action_dim)
 
-    n_instances = 500
+    n_instances = 1000
 
     for episode in range(n_instances):
 
-        poids = [random.randint(1, 20) for _ in range(n_items)]
-        valeurs = [random.randint(10, 50) for _ in range(n_items)]
-        capacity = int(sum(poids) * 0.4)
+        poids = [random.uniform(0, 1) for _ in range(n_items)]
+        valeurs = [random.uniform(0, 1) for _ in range(n_items)]
+
+        if n_items == 50 or n_items == 100:
+            capacity = n_items/4
+        else:
+            capacity = n_items/8
 
 
         problem = kpnsa(poids, valeurs, capacity)
