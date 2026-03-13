@@ -1,6 +1,6 @@
 
 import random
-from OptimizationProblem import OptimizationProblem
+from yanis.OptimizationProblem import OptimizationProblem
 
 class KnapsackProblem(OptimizationProblem):
     def __init__(self, poids, valeur, max_capacity):

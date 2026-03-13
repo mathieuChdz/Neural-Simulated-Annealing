@@ -1,5 +1,6 @@
 import random
 import numpy as np
+import os
 
 class ESAgent:
     def __init__(self, n_items, n_steps_per_episode, pop_size=10, sigma=0.1, lr=0.05):
@@ -88,11 +89,12 @@ class ESAgent:
         self.theta = self.theta + self.lr / (self.pop_size * self.sigma) * gradient
     
     def save(self, filename="poids_agent_es.npy"):
-        """Sauvegarde le cerveau de l'agent dans un fichier."""
-        np.save(filename, self.theta)
-        print(f"Poids sauvegardés dans {filename}")
+        chemin = os.path.join("yanis", filename)
+        np.save(chemin, self.theta)
+        print(f"Poids sauvegardés dans {chemin}")
+
 
     def load(self, filename="poids_agent_es.npy"):
-        """Charge un cerveau existant depuis un fichier."""
-        self.theta = np.load(filename)
-        print(f"Poids chargés depuis {filename}")
+        chemin = os.path.join("yanis", filename)
+        self.theta = np.load(chemin)
+        print(f"Poids chargés depuis {chemin}")
