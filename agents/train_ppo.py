@@ -22,7 +22,7 @@ def train():
 
     agent = PPOAgent(state_dim, action_dim)
 
-    n_instances = 5
+    n_instances = 500
 
     for episode in range(n_instances):
 
