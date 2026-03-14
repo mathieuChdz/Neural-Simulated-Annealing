@@ -28,7 +28,7 @@ def main():
     n_steps_sa = 2000
     mon_agent_es = ESAgent(n_items=nb_objets, n_steps_per_episode=n_steps_sa, pop_size=10)
 
-    MODE_ENTRAINEMENT = True  
+    MODE_ENTRAINEMENT = False  
 
     if MODE_ENTRAINEMENT:
         print("-> DEBUT DE L'ENTRAINEMENT (Veuillez patienter...)")

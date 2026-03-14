@@ -23,7 +23,7 @@ def generer_probleme(nb_objets, seed=None):
     return KnapsackProblem(poids, valeurs, capacite_max)
 
 def run_stats():
-    tailles_problemes = [50, 100]
+    tailles_problemes = [50, 100, 200]
 
     nb_seeds = 5
     n_steps_sa = 2000 
