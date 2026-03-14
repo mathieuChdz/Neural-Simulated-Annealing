@@ -24,9 +24,9 @@ def generer_probleme(nb_objets, seed=None, nsa=False):
 
 def run_stats():
     # Configuration
-    nb_objets = 100
+    nb_objets = 50
     nb_seeds = 5
-    n_steps = 1000
+    n_steps = 300
     path_model = f"agents/ppo_model_{nb_objets}.pth"
 
     # Initialisation de l'agent PPO
