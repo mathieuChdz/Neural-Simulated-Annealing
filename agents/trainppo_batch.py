@@ -13,9 +13,9 @@ from agents.ppo import PPOAgent
 # ===== Paramètres généraux =====
 SIZES = [50, 100, 200]   # tailles à entraîner
 SIZE =[ 500, 1000 ]                            # taille pour test rapide (remplace SIZES pour un test rapide)
-N_INSTANCES = 500                     # instances par taille
-N_STEPS = 500                        # étapes de SA par instance
-BIN_CAPACITY = 100                   
+N_INSTANCES = 100                     # instances par taille
+N_STEPS = 100                        # étapes de SA par instance
+BIN_CAPACITY = 1                 
 
 # dossier pour sauvegarder les modèles
 MODEL_DIR = "agents"
@@ -30,7 +30,7 @@ def train_for_size(n_items):
     n_bins = n_items
     print(f"\n=== Entraînement pour N={n_items} ===")
 
-    model_path = os.path.join(MODEL_DIR, f"ppo_model_{n_items}.pth")
+    model_path = os.path.join(MODEL_DIR, f"ppo_model_norma_{n_items}.pth")
 
     agent = PPOAgent()
 
@@ -44,7 +44,7 @@ def train_for_size(n_items):
         random.seed(ep)
         torch.manual_seed(ep)
 
-        items = [random.randint(5, 20) for _ in range(n_items)]
+        items = [random.uniform(0,1) for _ in range(n_items)]
 
         problem = BinPackingProblemNSA(items, BIN_CAPACITY, n_bins)
 

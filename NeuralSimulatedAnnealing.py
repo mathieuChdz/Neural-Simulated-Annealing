@@ -18,14 +18,15 @@ class NeuralSimulatedAnnealing:
         best_state = state.copy()
         best_energy = energy
 
-        temp = 100.0
-        final_temp = 0.1
+        T0 = 1
+        TK = 0.1
 
-        alpha = (final_temp / temp) ** (1 / self.n_steps)
+        temp = T0
+        alpha = (TK / T0) ** (1 / self.n_steps)
 
         for k in range(self.n_steps):
 
-            temp_norm = temp / 100.0
+            temp_norm = temp / T0
 
             if self.agent:
 
@@ -49,7 +50,6 @@ class NeuralSimulatedAnnealing:
             accept = False
 
             if delta < 0 or random.random() < math.exp(-delta / temp):
-
                 accept = True
 
             old_energy = energy
@@ -73,11 +73,10 @@ class NeuralSimulatedAnnealing:
                     reward,
                     False
                 )
-                
+
             temp *= alpha
 
         if self.agent:
-
             self.agent.update()
 
         return best_state, best_energy

@@ -9,11 +9,37 @@ class BinPackingProblem(OptimizationProblem):
         self.weights = weights
         self.capacity = capacity
         self.n_items = len(weights)
+        self.n_bins = self.n_items
 
     def etat_initial(self):
 
         # chaque objet dans son bin
-        return list(range(self.n_items))
+        
+
+        bins = []
+        state = [-1] * self.n_items
+
+        for i, w in enumerate(self.weights):
+
+            placed = False
+
+            for b, load in enumerate(bins):
+
+                if load + w <= self.capacity:
+
+                    bins[b] += w
+                    state[i] = b
+                    placed = True
+                    break
+
+            if not placed:
+
+                bins.append(w)
+                state[i] = len(bins) - 1
+
+        return state
+
+        #return list(range(self.n_items))
 
     def voisinage(self, state):
 

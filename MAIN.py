@@ -1,4 +1,5 @@
 import random
+
 from BinPackingProblem import BinPackingProblem
 from SimulatedAnnealing import SimulatedAnnealing
 
@@ -8,18 +9,41 @@ def main():
     random.seed(62)
 
     n_items = 50
+    capacity = 1
 
-    weights = [random.randint(1, 10) for _ in range(n_items)]
+    weights = [random.uniform(0, 1) for _ in range(n_items)]
 
-    capacity = 15
+    print("Weights :", weights)
+    print("Total weight :", sum(weights))
 
     problem = BinPackingProblem(weights, capacity)
 
-    sa = SimulatedAnnealing(problem, n_steps=2000)
+    sa = SimulatedAnnealing(
+        problem,
+        initial_temp=100,
+        final_temp=0.01,
+        n_steps=5000
+    )
 
     best_state, best_energy, history = sa.solve()
 
-    print("bins utilisés :", best_energy)
+    print("\n========================")
+    print("Bins utilisés :", best_energy)
+    print("========================")
+
+    # afficher les bins
+    bins = {}
+
+    for i, b in enumerate(best_state):
+
+        bins.setdefault(b, [])
+        bins[b].append(weights[i])
+
+    for b, items in bins.items():
+
+        load = sum(items)
+
+        print(f"Bin {b} | load={load:.3f} | n_items={len(items)}")
 
 
 if __name__ == "__main__":

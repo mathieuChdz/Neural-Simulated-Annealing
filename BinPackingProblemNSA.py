@@ -13,9 +13,8 @@ class BinPackingProblemNSA(NSAProblem):
 
     def etat_initial(self):
 
-        # chaque objet dans un bin aléatoire
-        import random
-        return [random.randint(0, self.n_bins - 1) for _ in range(self.n_items)]
+        # état initial stable : chaque objet dans son bin
+        return list(range(self.n_items))
 
     def energy(self, state):
 
@@ -35,12 +34,17 @@ class BinPackingProblemNSA(NSAProblem):
 
         i, j = action
 
-        # si l'objet i est déjà dans le bin j pas de changement, accelérer convergence
         if state[i] == j:
             return state.copy()
 
         new_state = state.copy()
         new_state[i] = j
+
+        # vérification capacité
+        loads = self.compute_bin_loads(new_state)
+
+        if loads[j] > self.capacity:
+            return state.copy()
 
         return new_state
 

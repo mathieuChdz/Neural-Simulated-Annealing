@@ -14,12 +14,47 @@ class SimulatedAnnealing:
 
         self.alpha = (final_temp / initial_temp) ** (1 / n_steps)
 
+    def random_neighbor(self, state):
+
+        state = state.copy()
+
+        move_type = random.random()
+
+        # ---- MOVE ITEM ----
+        if move_type < 0.5:
+
+            i = random.randint(0, self.problem.n_items - 1)
+            j = random.randint(0, self.problem.n_bins - 1)
+
+            state[i] = j
+
+        # ---- SWAP ITEMS ----
+        elif move_type < 0.8:
+
+            i = random.randint(0, self.problem.n_items - 1)
+            j = random.randint(0, self.problem.n_items - 1)
+
+            state[i], state[j] = state[j], state[i]
+
+        # ---- TRY MERGE BIN ----
+        else:
+
+            bin_to_empty = random.randint(0, self.problem.n_bins - 1)
+
+            for i in range(self.problem.n_items):
+
+                if state[i] == bin_to_empty:
+
+                    state[i] = random.randint(0, self.problem.n_bins - 1)
+
+        return state
+
     def solve(self):
 
-        current_state = self.problem.etat_initial()
+        current_state = self.problem.etat_initial().copy()
         current_energy = self.problem.energy(current_state)
 
-        best_state = current_state
+        best_state = current_state.copy()
         best_energy = current_energy
 
         temp = self.initial_temp
@@ -39,8 +74,8 @@ class SimulatedAnnealing:
 
             else:
 
-                action = random.randint(0, self.problem.action_space() - 1)
-                voisin = self.problem.apply_action(current_state, action)
+                voisin = self.random_neighbor(current_state)
+
             voisin_energy = self.problem.energy(voisin)
 
             delta = voisin_energy - current_energy
@@ -67,7 +102,7 @@ class SimulatedAnnealing:
                 if current_energy < best_energy:
 
                     best_energy = current_energy
-                    best_state = current_state
+                    best_state = current_state.copy()
 
             history.append(current_energy)
 
