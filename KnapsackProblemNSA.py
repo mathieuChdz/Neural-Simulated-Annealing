@@ -29,21 +29,26 @@ class KnapsackProblem(NSAProblem):
         return new_state
     
     def state_to_tensor(self, state, temperature):
+
+        #pour chaque item i : [x_i, w_i, v_i, W, T]
+        matrix = []
+        for i in range(self.n_items):
+            item_features = [
+                float(state[i]),
+                self.poids[i],
+                self.valeur[i],
+                self.max_capacity,
+                temperature
+            ]
+            matrix.append(item_features)
         
-        total_weight = sum(s * w for s, w in zip(state, self.poids))
-        total_value = sum(s * v for s, v in zip(state, self.valeur))
-
-        temp_norm = temperature  # idéalement normalisé dans SA
-
-        # vecteur = sélection + poids total + valeur totale + température
-        state_vector = (
-            list(state)
-            + [total_weight / self.max_capacity]
-            + [total_value / (sum(self.valeur) + 1e-8)]
-            + [temp_norm]
-        )
-
-        return np.array(state_vector, dtype=np.float32)
+        return {
+            'x': state,
+            'w': self.poids,
+            'v': self.valeur,
+            'W': self.max_capacity,
+            'temp': temperature
+        }
 
     def action_space(self):
         return self.n_items

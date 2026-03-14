@@ -20,7 +20,7 @@ def mainSA():
 
     for i in range(5):
 
-        sa = SimulatedAnnealing(probleme, initial_temp=1.0, final_temp=0.1, n_steps=2000)
+        sa = SimulatedAnnealing(probleme, initial_temp=1.0, final_temp=0.1, n_steps=5000)
         
         meilleur_etat, meilleure_energie, _ = sa.solve()
 
