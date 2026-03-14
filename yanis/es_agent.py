@@ -74,13 +74,13 @@ class ESAgent:
 
         R = np.array(self.rewards)
         
-        # Normalisation des récompenses (Fitness shaping, crucial en ES)
+        # Normalisation des recompenses (Fitness shaping, crucial en ES)
         if np.std(R) != 0:
             A = (R - np.mean(R)) / np.std(R)
         else:
             A = np.zeros_like(R)
             
-        # On calcule le gradient estimé
+
         gradient = np.zeros(4)
         for i in range(self.pop_size):
             gradient += A[i] * self.noises[i]
@@ -91,10 +91,8 @@ class ESAgent:
     def save(self, filename="poids_agent_es.npy"):
         chemin = os.path.join("yanis", filename)
         np.save(chemin, self.theta)
-        print(f"Poids sauvegardés dans {chemin}")
 
 
     def load(self, filename="poids_agent_es.npy"):
         chemin = os.path.join("yanis", filename)
         self.theta = np.load(chemin)
-        print(f"Poids chargés depuis {chemin}")

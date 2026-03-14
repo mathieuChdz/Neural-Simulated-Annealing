@@ -9,10 +9,10 @@ from yanis.es_agent import ESAgent
 
 
 def main():
-    nb_objets = 50
+    nb_objets = 200
     poids = [random.uniform(0,1) for _ in range(nb_objets)]
     valeurs = [random.uniform(0,1) for _ in range(nb_objets)]
-    capacite_max = nb_objets/4
+    capacite_max = nb_objets/8
 
     probleme = KnapsackProblem(poids, valeurs, capacite_max)
     
@@ -28,13 +28,13 @@ def main():
     n_steps_sa = 2000
     mon_agent_es = ESAgent(n_items=nb_objets, n_steps_per_episode=n_steps_sa, pop_size=10)
 
-    MODE_ENTRAINEMENT = False  
+    MODE_ENTRAINEMENT = True  
 
     if MODE_ENTRAINEMENT:
         print("-> DEBUT DE L'ENTRAINEMENT (Veuillez patienter...)")
-        if os.path.exists("yanis/poids_agent_es_50.npy"):
+        if os.path.exists("yanis/poids_agent_es_200.npy"):
             print("   (Ancien cerveau détecté : Reprise de l'entraînement !)")
-            mon_agent_es.load("yanis/poids_agent_es_50.npy")
+            mon_agent_es.load("yanis/poids_agent_es_200.npy")
         else:
             print("   (Aucun cerveau detecte : Entraînement depuis zero.)")
         generations = 500
@@ -46,10 +46,10 @@ def main():
             if (run + 1) % mon_agent_es.pop_size == 0:
                 print(f"   Generation {int((run + 1)/mon_agent_es.pop_size)}/{generations} evaluee et agent mis a jour.")
 
-        mon_agent_es.save("poids_agent_es_50.npy")
+        mon_agent_es.save("poids_agent_es_200.npy")
     else:
         print("-> CHARGEMENT DU MODÈLE PRÉ-ENTRAÎNÉ")
-        mon_agent_es.load("poids_agent_es_50.npy")
+        mon_agent_es.load("poids_agent_es_200.npy")
 
 
     print("\n--- TEST FINAL DE L'AGENT ES ---")
