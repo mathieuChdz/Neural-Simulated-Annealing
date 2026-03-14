@@ -8,9 +8,9 @@ class PolicyNetwork(nn.Module):
     def __init__(self, state_dim, action_dim):
         super().__init__()
         self.model = nn.Sequential(
-            nn.Linear(state_dim, 64),
+            nn.Linear(state_dim, 16),
             nn.ReLU(),
-            nn.Linear(64, action_dim)
+            nn.Linear(16, action_dim)
         )
 
     def forward(self, state):
@@ -22,9 +22,9 @@ class ValueNetwork(nn.Module):
     def __init__(self, state_dim):
         super().__init__()
         self.model = nn.Sequential(
-            nn.Linear(state_dim, 64),
+            nn.Linear(state_dim, 16),
             nn.ReLU(),
-            nn.Linear(64, 1)
+            nn.Linear(16, 1)
         )
 
     def forward(self, state):
@@ -52,8 +52,9 @@ class PPOAgent:
     # ====== 1. Récupérer mémoire ======
         states = torch.FloatTensor([m[0] for m in self.memory])
         actions = torch.LongTensor([m[1] for m in self.memory])
-        old_log_probs = torch.stack([m[2] for m in self.memory])
+        old_log_probs = torch.stack([m[2] for m in self.memory]).detach()
         rewards = [m[3] for m in self.memory]
+        values = torch.FloatTensor([m[4] for m in self.memory])
 
         # ====== 2. Calcul des returns ======
         returns = []
@@ -74,7 +75,10 @@ class PPOAgent:
             ratio = torch.exp(new_log_probs - old_log_probs)
 
             values = self.value(states).squeeze()
-            advantages = returns - values.detach()
+
+            advantages = self.compute_gae(rewards, values, self.gamma, 0.95)
+            returns = advantages + values
+            advantages = (advantages - advantages.mean()) / (advantages.std() + 1e-8)
 
             surr1 = ratio * advantages
             surr2 = torch.clamp(ratio, 1 - self.eps_clip, 1 + self.eps_clip) * advantages
@@ -94,15 +98,36 @@ class PPOAgent:
         self.memory = []
 
     
+    def compute_gae(self, rewards, values, gamma=0.99, lam=0.95):
+
+        advantages = []
+        gae = 0
+
+        values = values.tolist()
+        values.append(0)
+
+        for t in reversed(range(len(rewards))):
+
+            delta = rewards[t] + gamma * values[t+1] - values[t]
+
+            gae = delta + gamma * lam * gae
+
+            advantages.insert(0, gae)
+
+        return torch.FloatTensor(advantages)
+
     def act(self, state):
         state = torch.FloatTensor(state).unsqueeze(0)
         dist = self.policy(state)
         action = dist.sample()
         log_prob = dist.log_prob(action)
-        return action.item(), log_prob.detach()
+
+        value = self.value(state)
+
+        return action.item(), log_prob.detach(), value.detach().item()
     
-    def store(self, state, action, log_prob, reward, done):
-        self.memory.append((state, action, log_prob, reward, done))
+    def store(self, state, action, log_prob, reward, value, done):
+        self.memory.append((state, action, log_prob, reward, value, done))
 
 
     def save(self, path):

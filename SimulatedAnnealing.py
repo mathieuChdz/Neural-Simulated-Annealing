@@ -37,7 +37,7 @@ class SimulatedAnnealing:
                     temp_norm = temp / self.initial_temp
                     state_tensor = self.problem.state_to_tensor(current_state, temp_norm)
 
-                    action, log_prob = self.agent.act(state_tensor)
+                    action, log_prob, value = self.agent.act(state_tensor)
 
                     voisin = self.problem.apply_action(current_state, action)
                     
@@ -84,10 +84,12 @@ class SimulatedAnnealing:
                         reward = current_energy - voisin_energy
                         next_state = voisin
                     else:
-                        reward = current_energy - voisin_energy #reward plus stable que -10000
+                        reward = 0
                         next_state = current_state
 
-                    self.agent.store(state_tensor, action, log_prob, reward, True)
+                    is_done = (k == self.n_steps - 1)
+
+                    self.agent.store(state_tensor, action, log_prob, reward, value, is_done)
             
 
                 if accepte:

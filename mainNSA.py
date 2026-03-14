@@ -6,8 +6,8 @@ from SimulatedAnnealing import SimulatedAnnealing
 from agents.ppo import PPOAgent
 
 
-def main():
-    random.seed(62)
+def mainNSA():
+    random.seed(2)
     nb_objets = 100
     poids = [random.uniform(0, 1) for _ in range(nb_objets)]
     valeurs = [random.uniform(0, 1) for _ in range(nb_objets)]

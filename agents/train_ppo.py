@@ -1,5 +1,6 @@
 import random
 import torch
+import numpy as np
 
 import sys
 import os
@@ -15,7 +16,7 @@ def train():
 
     batch_size = 16
 
-    n_items = 100
+    n_items = 50
     state_dim = n_items + 3
     action_dim = n_items
 
@@ -25,12 +26,12 @@ def train():
 
     for episode in range(n_instances):
 
+        liste_batch = []
+
         for i in range(batch_size):
 
-            liste_batch = []
-
-            poids = [random.uniform(0, 1) for _ in range(n_items)]
-            valeurs = [random.uniform(0, 1) for _ in range(n_items)]
+            poids = np.random.rand(n_items)
+            valeurs = np.random.rand(n_items)
 
             if n_items == 50 or n_items == 100:
                 capacity = n_items/4
@@ -55,7 +56,7 @@ def train():
         print(f"Episode {episode+1}/{n_instances} | Reward moyen : {sum(liste_batch)/len(liste_batch):.4f}")
         agent.update()
 
-    agent.save("agents/ppo_model_100.pth")
+    agent.save("agents/ppo_model_50.pth")
 
 if __name__ == "__main__":
     train()

@@ -15,13 +15,13 @@ class KnapsackProblem(NSAProblem):
         return [0] * self.n_items 
         
     def energy(self, state):
+
         total_weight = sum(s * w for s, w in zip(state, self.poids))
         total_value = sum(s * v for s, v in zip(state, self.valeur))
-        
-        if total_weight > self.max_capacity:
-            return 1000 + (total_weight - self.max_capacity) * 10 # pour faire la difference entre les mauvaise solution et les solution encore plus mauvaise
-            
-        return -total_value
+
+        penalty = max(0, total_weight - self.max_capacity)
+
+        return -total_value + 20 * penalty
 
     def apply_action(self, state, action):
         new_state = list(state)
