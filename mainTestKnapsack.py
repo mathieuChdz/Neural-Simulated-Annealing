@@ -24,7 +24,7 @@ def generer_probleme(nb_objets, seed=None, nsa=False):
 
 def run_stats():
     # Configuration
-    nb_objets = 50
+    nb_objets = 100
     nb_seeds = 5
     n_steps = 1000
     path_model = f"agents/ppo_model_{nb_objets}.pth"
@@ -49,16 +49,21 @@ def run_stats():
     print(f"{'Seed':<10} | {'SA Classique':<15} | {'NSA (PPO)':<15}")
     print("-" * 60)
 
+    seeds_aleatoires = [random.randint(0, 10000) for _ in range(nb_seeds)]
+
     for seed in range(nb_seeds):
+
+        print(f"Seed {seed+1}/{nb_seeds} (Random Seed: {seeds_aleatoires[seed]})")
+
         # 1. SA Classique
-        prob_std = generer_probleme(nb_objets, seed=seed, nsa=False)
+        prob_std = generer_probleme(nb_objets, seed=seeds_aleatoires[seed], nsa=False)
         sa_std = SimulatedAnnealing(prob_std, initial_temp=1.0, final_temp=0.1, n_steps=n_steps)
         _, e_std, _ = sa_std.solve(log_filename="nul") # "nul" pour éviter les logs inutiles
         val_std = -e_std
         scores_sa.append(val_std)
 
         # 2. NSA (avec Agent PPO)
-        prob_nsa = generer_probleme(nb_objets, seed=seed, nsa=True)
+        prob_nsa = generer_probleme(nb_objets, seed=seeds_aleatoires[seed], nsa=True)
         sa_nsa = SimulatedAnnealing(prob_nsa, initial_temp=1.0, final_temp=0.1, n_steps=n_steps, agent=agent_ppo)
         _, e_nsa, _ = sa_nsa.solve(log_filename="nul")
         val_nsa = -e_nsa

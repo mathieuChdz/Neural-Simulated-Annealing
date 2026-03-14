@@ -16,13 +16,13 @@ def train():
 
     batch_size = 16
 
-    n_items = 50
+    n_items = 100
     state_dim = n_items + 3
     action_dim = n_items
 
     agent = PPOAgent(state_dim, action_dim)
 
-    n_instances = 500
+    n_instances = 1000
 
     for episode in range(n_instances):
 
@@ -56,7 +56,7 @@ def train():
         print(f"Episode {episode+1}/{n_instances} | Reward moyen : {sum(liste_batch)/len(liste_batch):.4f}")
         agent.update()
 
-    agent.save("agents/ppo_model_50.pth")
+    agent.save("agents/ppo_model_100.pth")
 
 if __name__ == "__main__":
     train()
