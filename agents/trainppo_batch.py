@@ -13,8 +13,8 @@ from agents.ppo import PPOAgent
 # ===== Paramètres généraux =====
 SIZES = [50, 100, 200]   # tailles à entraîner
 SIZE =[ 500, 1000 ]                            # taille pour test rapide (remplace SIZES pour un test rapide)
-N_INSTANCES = 1000                     # instances par taille
-N_STEPS = 1000                       # étapes de SA par instance
+N_INSTANCES = 500                     # instances par taille
+N_STEPS = 500                        # étapes de SA par instance
 BIN_CAPACITY = 100                   
 
 # dossier pour sauvegarder les modèles
@@ -32,10 +32,7 @@ def train_for_size(n_items):
 
     model_path = os.path.join(MODEL_DIR, f"ppo_model_{n_items}.pth")
 
-    state_dim = n_items * n_bins + 1
-    action_dim = n_items * n_bins
-
-    agent = PPOAgent(state_dim=state_dim, action_dim=action_dim)
+    agent = PPOAgent()
 
     # charger modèle existant
     if os.path.exists(model_path):

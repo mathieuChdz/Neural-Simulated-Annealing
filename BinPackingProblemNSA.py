@@ -1,43 +1,75 @@
-import random
-import numpy as np
+import torch
+from NSAProblem import NSAProblem
 
-class BinPackingProblemNSA:
-    def __init__(self, items, bin_capacity, n_bins):
-        self.items = items
-        self.bin_capacity = bin_capacity
+
+class BinPackingProblemNSA(NSAProblem):
+
+    def __init__(self, weights, capacity, n_bins):
+
+        self.weights = weights
+        self.capacity = capacity
+        self.n_items = len(weights)
         self.n_bins = n_bins
-        self.n_items = len(items)
 
     def etat_initial(self):
-        return [random.randint(0, self.n_bins-1) for _ in range(self.n_items)]
+
+        # chaque objet dans un bin aléatoire
+        import random
+        return [random.randint(0, self.n_bins - 1) for _ in range(self.n_items)]
+
+    def energy(self, state):
+
+        bins = {}
+
+        for i, b in enumerate(state):
+            bins.setdefault(b, 0)
+            bins[b] += self.weights[i]
+
+        for load in bins.values():
+            if load > self.capacity:
+                return 1000 + (load - self.capacity) * 10
+
+        return len(bins)
+
+    def apply_action(self, state, action):
+
+        i, j = action
+
+        # si l'objet i est déjà dans le bin j pas de changement, accelérer convergence
+        if state[i] == j:
+            return state.copy()
+
+        new_state = state.copy()
+        new_state[i] = j
+
+        return new_state
 
     def action_space(self):
         return self.n_items * self.n_bins
 
-    def state_to_tensor(self, state, temp):
-        tensor = []
-        for b in state:
-            one_hot = [0] * self.n_bins
-            one_hot[b] = 1
-            tensor.extend(one_hot)
-        tensor.append(temp / 100.0)  # normaliser la température
-        return np.array(tensor, dtype=np.float32)
+    def compute_bin_loads(self, state):
 
-    def apply_action(self, state, action):
-        new_state = state.copy()
-        item_idx = action // self.n_bins
-        bin_idx = action % self.n_bins
-        new_state[item_idx] = bin_idx
-        return new_state
+        loads = [0] * self.n_bins
 
-    def energy(self, state):
-        bins = [[] for _ in range(self.n_bins)]
-        for idx, b in enumerate(state):
-            bins[b].append(self.items[idx])
-        energy = 0
-        for b in bins:
-            total = sum(b)
-            if total > self.bin_capacity:
-                energy += 1000 + (total - self.bin_capacity)*10
-        used_bins = sum(1 for b in bins if len(b) > 0)
-        return energy + used_bins
+        for i, b in enumerate(state):
+            loads[b] += self.weights[i]
+
+        return loads
+
+    def state_to_tensor(self, state, temperature):
+
+        loads = self.compute_bin_loads(state)
+
+        features = []
+
+        for i in range(self.n_items):
+
+            bin_i = state[i]
+
+            wi = self.weights[i] / self.capacity
+            free = (self.capacity - loads[bin_i]) / self.capacity
+            t = temperature
+
+            features.append([wi, free, t])
+
+        return torch.tensor(features, dtype=torch.float32)
