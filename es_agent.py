@@ -88,9 +88,12 @@ class ESAgent:
         # On met à jour le cerveau central
         self.theta = self.theta + self.lr / (self.pop_size * self.sigma) * gradient
     
-    def save(self, filename="poids_agent_es.npy"):
-        np.save(filename, self.theta)
+    def save(self, filepath="agents/poids_agent_es.npy"):
+        dossier = os.path.dirname(filepath)
+        if dossier:
+            os.makedirs(dossier, exist_ok=True)
+        np.save(filepath, self.theta)
 
 
-    def load(self, filename="poids_agent_es.npy"):
-        self.theta = np.load(filename)
+    def load(self, filepath="agents/poids_agent_es.npy"):
+        self.theta = np.load(filepath)
