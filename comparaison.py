@@ -17,12 +17,12 @@ from agents.ppo import PPOAgent
 
 # ===== Paramètres =====
 
-SIZES = [50, 100, 200]
+SIZES = [50, 100]
 
 N_INSTANCES = 20
 N_STEPS = 1000
 
-BIN_CAPACITY = 100
+BIN_CAPACITY = 1
 MODEL_DIR = "agents"
 
 random.seed(42)
@@ -43,7 +43,7 @@ def run_comparison():
         # charger modèle PPO
         agent = PPOAgent()
 
-        model_path = os.path.join(MODEL_DIR, f"ppo_model_{N}.pth")
+        model_path = os.path.join(MODEL_DIR, f"ppo_model_norma_{N}.pth")
 
         if os.path.exists(model_path):
 
@@ -57,7 +57,7 @@ def run_comparison():
 
         for inst in range(N_INSTANCES):
 
-            items = [random.randint(5, 20) for _ in range(N)]
+            items = [random.uniform(0, 1) for _ in range(N)]
 
             problem = BinPackingProblemNSA(items, BIN_CAPACITY, N)
 

@@ -10,54 +10,69 @@ from BinPackingProblemNSA import BinPackingProblemNSA
 from NeuralSimulatedAnnealing import NeuralSimulatedAnnealing
 from agents.ppo import PPOAgent
 
-# ===== Paramètres généraux =====
-SIZES = [50, 100, 200]   # tailles à entraîner
-SIZE =[ 500, 1000 ]                            # taille pour test rapide (remplace SIZES pour un test rapide)
-N_INSTANCES = 100                     # instances par taille
-N_STEPS = 100                        # étapes de SA par instance
-BIN_CAPACITY = 1                 
 
-# dossier pour sauvegarder les modèles
+# ===== Paramètres =====
+
+N_ITEMS = 50              # comme le papier : BIN50
+N_BINS = N_ITEMS
+BIN_CAPACITY = 1
+
+EPOCHS = 100              # au lieu de 1000
+PROBLEMS_PER_EPOCH = 32   # au lieu de 256
+ROLLOUT_STEPS = 100       # K = 100 comme dans l'article
+
+
 MODEL_DIR = "agents"
 os.makedirs(MODEL_DIR, exist_ok=True)
 
-# Fixer seeds pour reproductibilité
+MODEL_PATH = os.path.join(MODEL_DIR, "ppo_model_norma_50.pth")
+
 random.seed(42)
 torch.manual_seed(42)
 
-def train_for_size(n_items):
 
-    n_bins = n_items
-    print(f"\n=== Entraînement pour N={n_items} ===")
+def train():
 
-    model_path = os.path.join(MODEL_DIR, f"ppo_model_norma_{n_items}.pth")
+    print("=== Training Neural SA (BIN50) ===")
 
     agent = PPOAgent()
 
-    # charger modèle existant
-    if os.path.exists(model_path):
+    if os.path.exists(MODEL_PATH):
         print("Chargement modèle existant")
-        agent.load(model_path)
+        agent.load(MODEL_PATH)
 
-    for ep in range(N_INSTANCES):
+    for epoch in range(EPOCHS):
 
-        random.seed(ep)
-        torch.manual_seed(ep)
+        for p in range(PROBLEMS_PER_EPOCH):
 
-        items = [random.uniform(0,1) for _ in range(n_items)]
+            seed = epoch * PROBLEMS_PER_EPOCH + p
+            random.seed(seed)
+            torch.manual_seed(seed)
 
-        problem = BinPackingProblemNSA(items, BIN_CAPACITY, n_bins)
+            # génération instance
+            items = [random.uniform(0,1) for _ in range(N_ITEMS)]
 
-        sa = NeuralSimulatedAnnealing(problem, n_steps=N_STEPS, agent=agent)
+            problem = BinPackingProblemNSA(
+                items,
+                BIN_CAPACITY,
+                N_BINS
+            )
 
-        best_state, best_energy = sa.solve()
+            sa = NeuralSimulatedAnnealing(
+                problem,
+                n_steps=ROLLOUT_STEPS,
+                agent=agent
+            )
 
-        if ep % 10 == 0:
-            print(f"Episode {ep}/{N_INSTANCES} energy {best_energy}")
+            best_state, best_energy = sa.solve()
 
-    agent.save(model_path)
+        if epoch % 5 == 0:
+            print(f"Epoch {epoch}/{EPOCHS}")
 
-    print(f"Modèle PPO pour N={n_items} sauvegardé : {model_path}")
+    agent.save(MODEL_PATH)
+
+    print("Model saved :", MODEL_PATH)
+
+
 if __name__ == "__main__":
-    for size in SIZES:
-        train_for_size(size)
+    train()
