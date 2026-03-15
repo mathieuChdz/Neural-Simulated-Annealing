@@ -3,9 +3,9 @@ import numpy as np
 import time
 import os
 
-from yanis.KnapsackProblem import KnapsackProblem
-from yanis.SimulatedAnnealing import SimulatedAnnealing
-from yanis.es_agent import ESAgent
+from KnapsackProblem import KnapsackProblem
+from SimulatedAnnealing import SimulatedAnnealing
+from es_agent import ESAgent
 
 def generer_probleme(nb_objets, seed=None):
     if seed is not None:

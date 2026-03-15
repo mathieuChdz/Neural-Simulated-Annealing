@@ -89,10 +89,8 @@ class ESAgent:
         self.theta = self.theta + self.lr / (self.pop_size * self.sigma) * gradient
     
     def save(self, filename="poids_agent_es.npy"):
-        chemin = os.path.join("yanis", filename)
-        np.save(chemin, self.theta)
+        np.save(filename, self.theta)
 
 
     def load(self, filename="poids_agent_es.npy"):
-        chemin = os.path.join("yanis", filename)
-        self.theta = np.load(chemin)
+        self.theta = np.load(filename)
