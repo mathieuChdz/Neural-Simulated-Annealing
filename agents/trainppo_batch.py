@@ -11,15 +11,14 @@ from NeuralSimulatedAnnealing import NeuralSimulatedAnnealing
 from agents.ppo import PPOAgent
 
 
-# ===== Paramètres =====
 
-N_ITEMS = 50              # comme le papier : BIN50
+N_ITEMS = 50             
 N_BINS = N_ITEMS
 BIN_CAPACITY = 1
 
-EPOCHS = 100              # au lieu de 1000
-PROBLEMS_PER_EPOCH = 32   # au lieu de 256
-ROLLOUT_STEPS = 100       # K = 100 comme dans l'article
+EPOCHS = 500              
+PROBLEMS_PER_EPOCH = 72   
+ROLLOUT_STEPS = 100       
 
 
 MODEL_DIR = "agents"
