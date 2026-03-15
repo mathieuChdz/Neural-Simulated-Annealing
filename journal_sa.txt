@@ -1,0 +1,906 @@
+=== DÉBUT DU RECUIT SIMULÉ ===
+Mode : NEURAL SA
+Température initiale : 1 | Itérations : 100
+
+--- Itération 1 ---
+Température : 1.0000
+Etat x actuel : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] | Énergie : 0.0
+Action proposée : Flipper l'objet n°44
+Etat x' voisin: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0] | Énergie : -0.47262426459851115
+Différence d'énergie (Delta E) : -0.47262426459851115
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.0422)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 2 ---
+Température : 0.9772
+Etat x actuel : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0] | Énergie : -0.47262426459851115
+Action proposée : Flipper l'objet n°23
+Etat x' voisin: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0] | Énergie : -1.2182200620474195
+Différence d'énergie (Delta E) : -0.7455957974489084
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.1726)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 3 ---
+Température : 0.9550
+Etat x actuel : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0] | Énergie : -1.2182200620474195
+Action proposée : Flipper l'objet n°16
+Etat x' voisin: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0] | Énergie : -1.4898766628051012
+Différence d'énergie (Delta E) : -0.2716566007576817
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.8725)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 4 ---
+Température : 0.9333
+Etat x actuel : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0] | Énergie : -1.4898766628051012
+Action proposée : Flipper l'objet n°38
+Etat x' voisin: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0] | Énergie : -2.360381067969253
+Différence d'énergie (Delta E) : -0.870504405164152
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.6881)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 5 ---
+Température : 0.9120
+Etat x actuel : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0] | Énergie : -2.360381067969253
+Action proposée : Flipper l'objet n°29
+Etat x' voisin: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0] | Énergie : -3.102608064801567
+Différence d'énergie (Delta E) : -0.7422269968323136
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.0048)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 6 ---
+Température : 0.8913
+Etat x actuel : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0] | Énergie : -3.102608064801567
+Action proposée : Flipper l'objet n°39
+Etat x' voisin: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0] | Énergie : -3.889292901731126
+Différence d'énergie (Delta E) : -0.7866848369295592
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.2628)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 7 ---
+Température : 0.8710
+Etat x actuel : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0] | Énergie : -3.889292901731126
+Action proposée : Flipper l'objet n°45
+Etat x' voisin: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0] | Énergie : -3.9344768856920216
+Différence d'énergie (Delta E) : -0.045183983960895624
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.5664)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 8 ---
+Température : 0.8511
+Etat x actuel : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0] | Énergie : -3.9344768856920216
+Action proposée : Flipper l'objet n°3
+Etat x' voisin: [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0] | Énergie : -4.628937208301221
+Différence d'énergie (Delta E) : -0.6944603226091997
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.4503)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 9 ---
+Température : 0.8318
+Etat x actuel : [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0] | Énergie : -4.628937208301221
+Action proposée : Flipper l'objet n°47
+Etat x' voisin: [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0] | Énergie : -5.315448999345813
+Différence d'énergie (Delta E) : -0.6865117910445919
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.6741)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 10 ---
+Température : 0.8128
+Etat x actuel : [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0] | Énergie : -5.315448999345813
+Action proposée : Flipper l'objet n°49
+Etat x' voisin: [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1] | Énergie : -5.410799190572875
+Différence d'énergie (Delta E) : -0.09535019122706156
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.1302)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 11 ---
+Température : 0.7943
+Etat x actuel : [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1] | Énergie : -5.410799190572875
+Action proposée : Flipper l'objet n°42
+Etat x' voisin: [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -6.351416351377721
+Différence d'énergie (Delta E) : -0.9406171608048464
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.9629)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 12 ---
+Température : 0.7762
+Etat x actuel : [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -6.351416351377721
+Action proposée : Flipper l'objet n°15
+Etat x' voisin: [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -6.35849658056451
+Différence d'énergie (Delta E) : -0.007080229186788856
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.6420)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 13 ---
+Température : 0.7586
+Etat x actuel : [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -6.35849658056451
+Action proposée : Flipper l'objet n°2
+Etat x' voisin: [0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -6.770066825189555
+Différence d'énergie (Delta E) : -0.4115702446250449
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.4304)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 14 ---
+Température : 0.7413
+Etat x actuel : [0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -6.770066825189555
+Action proposée : Flipper l'objet n°34
+Etat x' voisin: [0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -7.688726175990739
+Différence d'énergie (Delta E) : -0.9186593508011844
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.3131)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 15 ---
+Température : 0.7244
+Etat x actuel : [0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -7.688726175990739
+Action proposée : Flipper l'objet n°30
+Etat x' voisin: [0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -8.230516359279164
+Différence d'énergie (Delta E) : -0.5417901832884251
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.3152)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 16 ---
+Température : 0.7079
+Etat x actuel : [0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -8.230516359279164
+Action proposée : Flipper l'objet n°35
+Etat x' voisin: [0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -8.361406667932986
+Différence d'énergie (Delta E) : -0.13089030865382156
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.5263)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 17 ---
+Température : 0.6918
+Etat x actuel : [0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -8.361406667932986
+Action proposée : Flipper l'objet n°5
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -8.63771966979236
+Différence d'énergie (Delta E) : -0.2763130018593749
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.0200)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 18 ---
+Température : 0.6761
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -8.63771966979236
+Action proposée : Flipper l'objet n°4
+Etat x' voisin: [0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -8.914049294341098
+Différence d'énergie (Delta E) : -0.2763296245487368
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.8623)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 19 ---
+Température : 0.6607
+Etat x actuel : [0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -8.914049294341098
+Action proposée : Flipper l'objet n°25
+Etat x' voisin: [0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -9.759009769877114
+Différence d'énergie (Delta E) : -0.8449604755360163
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.3689)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 20 ---
+Température : 0.6457
+Etat x actuel : [0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -9.759009769877114
+Action proposée : Flipper l'objet n°8
+Etat x' voisin: [0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -10.640802267205263
+Différence d'énergie (Delta E) : -0.8817924973281492
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.0132)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 21 ---
+Température : 0.6310
+Etat x actuel : [0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -10.640802267205263
+Action proposée : Flipper l'objet n°12
+Etat x' voisin: [0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -11.399922946727493
+Différence d'énergie (Delta E) : -0.7591206795222298
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.5341)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 22 ---
+Température : 0.6166
+Etat x actuel : [0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -11.399922946727493
+Action proposée : Flipper l'objet n°19
+Etat x' voisin: [0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -12.070775217445487
+Différence d'énergie (Delta E) : -0.6708522707179938
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.1843)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 23 ---
+Température : 0.6026
+Etat x actuel : [0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -12.070775217445487
+Action proposée : Flipper l'objet n°24
+Etat x' voisin: [0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -12.858669915352305
+Différence d'énergie (Delta E) : -0.7878946979068182
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.1141)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 24 ---
+Température : 0.5888
+Etat x actuel : [0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -12.858669915352305
+Action proposée : Flipper l'objet n°12
+Etat x' voisin: [0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -12.099549235830079
+Différence d'énergie (Delta E) : 0.7591206795222263
+Probabilité d'accepter : 0.2755 (Tirage du hasard : 0.0565)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 25 ---
+Température : 0.5754
+Etat x actuel : [0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -12.099549235830079
+Action proposée : Flipper l'objet n°12
+Etat x' voisin: [0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -12.858669915352305
+Différence d'énergie (Delta E) : -0.7591206795222263
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.2021)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 26 ---
+Température : 0.5623
+Etat x actuel : [0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -12.858669915352305
+Action proposée : Flipper l'objet n°47
+Etat x' voisin: [0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.172158124307714
+Différence d'énergie (Delta E) : 0.686511791044591
+Probabilité d'accepter : 0.2950 (Tirage du hasard : 0.9669)
+=> Résultat : REFUSÉ 
+
+--- Itération 27 ---
+Température : 0.5495
+Etat x actuel : [0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1] | Énergie : -12.858669915352305
+Action proposée : Flipper l'objet n°47
+Etat x' voisin: [0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.172158124307714
+Différence d'énergie (Delta E) : 0.686511791044591
+Probabilité d'accepter : 0.2867 (Tirage du hasard : 0.1130)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 28 ---
+Température : 0.5370
+Etat x actuel : [0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.172158124307714
+Action proposée : Flipper l'objet n°7
+Etat x' voisin: [0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.191396991622533
+Différence d'énergie (Delta E) : -0.01923886731481872
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.6149)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 29 ---
+Température : 0.5248
+Etat x actuel : [0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.191396991622533
+Action proposée : Flipper l'objet n°21
+Etat x' voisin: [0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.616541204391986
+Différence d'énergie (Delta E) : -0.42514421276945313
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.9762)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 30 ---
+Température : 0.5129
+Etat x actuel : [0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.616541204391986
+Action proposée : Flipper l'objet n°38
+Etat x' voisin: [0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -11.746036799227834
+Différence d'énergie (Delta E) : 0.8705044051641515
+Probabilité d'accepter : 0.1832 (Tirage du hasard : 0.5384)
+=> Résultat : REFUSÉ 
+
+--- Itération 31 ---
+Température : 0.5012
+Etat x actuel : [0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.616541204391986
+Action proposée : Flipper l'objet n°42
+Etat x' voisin: [0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1] | Énergie : -11.675924043587141
+Différence d'énergie (Delta E) : 0.9406171608048446
+Probabilité d'accepter : 0.1531 (Tirage du hasard : 0.9728)
+=> Résultat : REFUSÉ 
+
+--- Itération 32 ---
+Température : 0.4898
+Etat x actuel : [0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.616541204391986
+Action proposée : Flipper l'objet n°8
+Etat x' voisin: [0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -11.734748707063837
+Différence d'énergie (Delta E) : 0.8817924973281492
+Probabilité d'accepter : 0.1652 (Tirage du hasard : 0.5136)
+=> Résultat : REFUSÉ 
+
+--- Itération 33 ---
+Température : 0.4786
+Etat x actuel : [0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.616541204391986
+Action proposée : Flipper l'objet n°21
+Etat x' voisin: [0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.191396991622533
+Différence d'énergie (Delta E) : 0.42514421276945313
+Probabilité d'accepter : 0.4114 (Tirage du hasard : 0.3247)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 34 ---
+Température : 0.4677
+Etat x actuel : [0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.191396991622533
+Action proposée : Flipper l'objet n°34
+Etat x' voisin: [0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -11.27273764082135
+Différence d'énergie (Delta E) : 0.9186593508011818
+Probabilité d'accepter : 0.1403 (Tirage du hasard : 0.0985)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 35 ---
+Température : 0.4571
+Etat x actuel : [0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -11.27273764082135
+Action proposée : Flipper l'objet n°28
+Etat x' voisin: [0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -11.936078349311632
+Différence d'énergie (Delta E) : -0.6633407084902814
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.7958)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 36 ---
+Température : 0.4467
+Etat x actuel : [0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -11.936078349311632
+Action proposée : Flipper l'objet n°42
+Etat x' voisin: [0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1] | Énergie : -10.995461188506788
+Différence d'énergie (Delta E) : 0.9406171608048446
+Probabilité d'accepter : 0.1218 (Tirage du hasard : 0.2201)
+=> Résultat : REFUSÉ 
+
+--- Itération 37 ---
+Température : 0.4365
+Etat x actuel : [0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -11.936078349311632
+Action proposée : Flipper l'objet n°4
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -11.659748724762895
+Différence d'énergie (Delta E) : 0.2763296245487368
+Probabilité d'accepter : 0.5310 (Tirage du hasard : 0.5212)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 38 ---
+Température : 0.4266
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -11.659748724762895
+Action proposée : Flipper l'objet n°18
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.075624386528172
+Différence d'énergie (Delta E) : -0.415875661765277
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.3113)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 39 ---
+Température : 0.4169
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.075624386528172
+Action proposée : Flipper l'objet n°25
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -11.230663910992156
+Différence d'énergie (Delta E) : 0.8449604755360163
+Probabilité d'accepter : 0.1317 (Tirage du hasard : 0.6464)
+=> Résultat : REFUSÉ 
+
+--- Itération 40 ---
+Température : 0.4074
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.075624386528172
+Action proposée : Flipper l'objet n°42
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1] | Énergie : -11.135007225723328
+Différence d'énergie (Delta E) : 0.9406171608048446
+Probabilité d'accepter : 0.0994 (Tirage du hasard : 0.6206)
+=> Résultat : REFUSÉ 
+
+--- Itération 41 ---
+Température : 0.3981
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.075624386528172
+Action proposée : Flipper l'objet n°24
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -11.287729688621354
+Différence d'énergie (Delta E) : 0.7878946979068182
+Probabilité d'accepter : 0.1382 (Tirage du hasard : 0.2918)
+=> Résultat : REFUSÉ 
+
+--- Itération 42 ---
+Température : 0.3890
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.075624386528172
+Action proposée : Flipper l'objet n°2
+Etat x' voisin: [0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -11.664054141903126
+Différence d'énergie (Delta E) : 0.41157024462504666
+Probabilité d'accepter : 0.3472 (Tirage du hasard : 0.6928)
+=> Résultat : REFUSÉ 
+
+--- Itération 43 ---
+Température : 0.3802
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.075624386528172
+Action proposée : Flipper l'objet n°44
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1] | Énergie : -11.60300012192966
+Différence d'énergie (Delta E) : 0.4726242645985117
+Probabilité d'accepter : 0.2885 (Tirage du hasard : 0.8757)
+=> Résultat : REFUSÉ 
+
+--- Itération 44 ---
+Température : 0.3715
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.075624386528172
+Action proposée : Flipper l'objet n°12
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -11.316503707005946
+Différence d'énergie (Delta E) : 0.7591206795222263
+Probabilité d'accepter : 0.1296 (Tirage du hasard : 0.1263)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 45 ---
+Température : 0.3631
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -11.316503707005946
+Action proposée : Flipper l'objet n°14
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.035823006096969
+Différence d'énergie (Delta E) : -0.7193192990910227
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.7538)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 46 ---
+Température : 0.3548
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.035823006096969
+Action proposée : Flipper l'objet n°20
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.643073938648506
+Différence d'énergie (Delta E) : -0.607250932551537
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.9794)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 47 ---
+Température : 0.3467
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.643073938648506
+Action proposée : Flipper l'objet n°21
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Différence d'énergie (Delta E) : -0.42514421276945313
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.3109)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 48 ---
+Température : 0.3388
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°21
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.643073938648506
+Différence d'énergie (Delta E) : 0.42514421276945313
+Probabilité d'accepter : 0.2852 (Tirage du hasard : 0.8074)
+=> Résultat : REFUSÉ 
+
+--- Itération 49 ---
+Température : 0.3311
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°42
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.127600990613114
+Différence d'énergie (Delta E) : 0.9406171608048446
+Probabilité d'accepter : 0.0584 (Tirage du hasard : 0.3270)
+=> Résultat : REFUSÉ 
+
+--- Itération 50 ---
+Température : 0.3236
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°19
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.397365880699965
+Différence d'énergie (Delta E) : 0.6708522707179938
+Probabilité d'accepter : 0.1258 (Tirage du hasard : 0.9638)
+=> Résultat : REFUSÉ 
+
+--- Itération 51 ---
+Température : 0.3162
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°8
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.18642565408981
+Différence d'énergie (Delta E) : 0.8817924973281492
+Probabilité d'accepter : 0.0615 (Tirage du hasard : 0.8387)
+=> Résultat : REFUSÉ 
+
+--- Itération 52 ---
+Température : 0.3090
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°42
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.127600990613114
+Différence d'énergie (Delta E) : 0.9406171608048446
+Probabilité d'accepter : 0.0477 (Tirage du hasard : 0.3500)
+=> Résultat : REFUSÉ 
+
+--- Itération 53 ---
+Température : 0.3020
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°2
+Etat x' voisin: [0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.656647906792916
+Différence d'énergie (Delta E) : 0.4115702446250431
+Probabilité d'accepter : 0.2559 (Tirage du hasard : 0.9051)
+=> Résultat : REFUSÉ 
+
+--- Itération 54 ---
+Température : 0.2951
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°44
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1] | Énergie : -12.595593886819447
+Différence d'énergie (Delta E) : 0.4726242645985117
+Probabilité d'accepter : 0.2016 (Tirage du hasard : 0.2671)
+=> Résultat : REFUSÉ 
+
+--- Itération 55 ---
+Température : 0.2884
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°44
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1] | Énergie : -12.595593886819447
+Différence d'énergie (Delta E) : 0.4726242645985117
+Probabilité d'accepter : 0.1942 (Tirage du hasard : 0.5644)
+=> Résultat : REFUSÉ 
+
+--- Itération 56 ---
+Température : 0.2818
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°8
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.18642565408981
+Différence d'énergie (Delta E) : 0.8817924973281492
+Probabilité d'accepter : 0.0438 (Tirage du hasard : 0.4550)
+=> Résultat : REFUSÉ 
+
+--- Itération 57 ---
+Température : 0.2754
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°14
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.348898852326933
+Différence d'énergie (Delta E) : 0.7193192990910262
+Probabilité d'accepter : 0.0734 (Tirage du hasard : 0.4500)
+=> Résultat : REFUSÉ 
+
+--- Itération 58 ---
+Température : 0.2692
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°8
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.18642565408981
+Différence d'énergie (Delta E) : 0.8817924973281492
+Probabilité d'accepter : 0.0378 (Tirage du hasard : 0.1705)
+=> Résultat : REFUSÉ 
+
+--- Itération 59 ---
+Température : 0.2630
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°29
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.325991154585648
+Différence d'énergie (Delta E) : 0.7422269968323114
+Probabilité d'accepter : 0.0595 (Tirage du hasard : 0.4913)
+=> Résultat : REFUSÉ 
+
+--- Itération 60 ---
+Température : 0.2570
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°8
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.18642565408981
+Différence d'énergie (Delta E) : 0.8817924973281492
+Probabilité d'accepter : 0.0324 (Tirage du hasard : 0.0472)
+=> Résultat : REFUSÉ 
+
+--- Itération 61 ---
+Température : 0.2512
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°24
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.28032345351114
+Différence d'énergie (Delta E) : 0.7878946979068182
+Probabilité d'accepter : 0.0434 (Tirage du hasard : 0.7869)
+=> Résultat : REFUSÉ 
+
+--- Itération 62 ---
+Température : 0.2455
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°19
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.397365880699965
+Différence d'énergie (Delta E) : 0.6708522707179938
+Probabilité d'accepter : 0.0650 (Tirage du hasard : 0.1458)
+=> Résultat : REFUSÉ 
+
+--- Itération 63 ---
+Température : 0.2399
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°23
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.322622353969052
+Différence d'énergie (Delta E) : 0.7455957974489067
+Probabilité d'accepter : 0.0447 (Tirage du hasard : 0.5124)
+=> Résultat : REFUSÉ 
+
+--- Itération 64 ---
+Température : 0.2344
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°19
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.397365880699965
+Différence d'énergie (Delta E) : 0.6708522707179938
+Probabilité d'accepter : 0.0572 (Tirage du hasard : 0.3984)
+=> Résultat : REFUSÉ 
+
+--- Itération 65 ---
+Température : 0.2291
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°24
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.28032345351114
+Différence d'énergie (Delta E) : 0.7878946979068182
+Probabilité d'accepter : 0.0321 (Tirage du hasard : 0.6962)
+=> Résultat : REFUSÉ 
+
+--- Itération 66 ---
+Température : 0.2239
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°19
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.397365880699965
+Différence d'énergie (Delta E) : 0.6708522707179938
+Probabilité d'accepter : 0.0500 (Tirage du hasard : 0.8275)
+=> Résultat : REFUSÉ 
+
+--- Itération 67 ---
+Température : 0.2188
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°25
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.223257675881943
+Différence d'énergie (Delta E) : 0.8449604755360163
+Probabilité d'accepter : 0.0210 (Tirage du hasard : 0.2121)
+=> Résultat : REFUSÉ 
+
+--- Itération 68 ---
+Température : 0.2138
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°24
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.28032345351114
+Différence d'énergie (Delta E) : 0.7878946979068182
+Probabilité d'accepter : 0.0251 (Tirage du hasard : 0.9738)
+=> Résultat : REFUSÉ 
+
+--- Itération 69 ---
+Température : 0.2089
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°19
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.397365880699965
+Différence d'énergie (Delta E) : 0.6708522707179938
+Probabilité d'accepter : 0.0403 (Tirage du hasard : 0.7739)
+=> Résultat : REFUSÉ 
+
+--- Itération 70 ---
+Température : 0.2042
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°39
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.2815333144884
+Différence d'énergie (Delta E) : 0.7866848369295596
+Probabilité d'accepter : 0.0212 (Tirage du hasard : 0.1754)
+=> Résultat : REFUSÉ 
+
+--- Itération 71 ---
+Température : 0.1995
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°29
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -12.325991154585648
+Différence d'énergie (Delta E) : 0.7422269968323114
+Probabilité d'accepter : 0.0242 (Tirage du hasard : 0.8972)
+=> Résultat : REFUSÉ 
+
+--- Itération 72 ---
+Température : 0.1950
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1] | Énergie : -13.068218151417959
+Action proposée : Flipper l'objet n°49
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -12.972867960190898
+Différence d'énergie (Delta E) : 0.09535019122706068
+Probabilité d'accepter : 0.6132 (Tirage du hasard : 0.3564)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 73 ---
+Température : 0.1905
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -12.972867960190898
+Action proposée : Flipper l'objet n°26
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -13.422784149642466
+Différence d'énergie (Delta E) : -0.4499161894515673
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.8535)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 74 ---
+Température : 0.1862
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -13.422784149642466
+Action proposée : Flipper l'objet n°34
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -14.341443500443651
+Différence d'énergie (Delta E) : -0.9186593508011853
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.8374)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 75 ---
+Température : 0.1820
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -14.341443500443651
+Action proposée : Flipper l'objet n°34
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -13.422784149642466
+Différence d'énergie (Delta E) : 0.9186593508011853
+Probabilité d'accepter : 0.0064 (Tirage du hasard : 0.5067)
+=> Résultat : REFUSÉ 
+
+--- Itération 76 ---
+Température : 0.1778
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -14.341443500443651
+Action proposée : Flipper l'objet n°25
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -13.496483024907635
+Différence d'énergie (Delta E) : 0.8449604755360163
+Probabilité d'accepter : 0.0086 (Tirage du hasard : 0.7622)
+=> Résultat : REFUSÉ 
+
+--- Itération 77 ---
+Température : 0.1738
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -14.341443500443651
+Action proposée : Flipper l'objet n°19
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -13.670591229725657
+Différence d'énergie (Delta E) : 0.6708522707179938
+Probabilité d'accepter : 0.0211 (Tirage du hasard : 0.2606)
+=> Résultat : REFUSÉ 
+
+--- Itération 78 ---
+Température : 0.1698
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -14.341443500443651
+Action proposée : Flipper l'objet n°5
+Etat x' voisin: [0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -14.065130498584276
+Différence d'énergie (Delta E) : 0.2763130018593749
+Probabilité d'accepter : 0.1965 (Tirage du hasard : 0.5657)
+=> Résultat : REFUSÉ 
+
+--- Itération 79 ---
+Température : 0.1660
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -14.341443500443651
+Action proposée : Flipper l'objet n°38
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -13.4709390952795
+Différence d'énergie (Delta E) : 0.8705044051641515
+Probabilité d'accepter : 0.0053 (Tirage du hasard : 0.9508)
+=> Résultat : REFUSÉ 
+
+--- Itération 80 ---
+Température : 0.1622
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -14.341443500443651
+Action proposée : Flipper l'objet n°21
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -13.916299287674198
+Différence d'énergie (Delta E) : 0.42514421276945313
+Probabilité d'accepter : 0.0727 (Tirage du hasard : 0.7552)
+=> Résultat : REFUSÉ 
+
+--- Itération 81 ---
+Température : 0.1585
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -14.341443500443651
+Action proposée : Flipper l'objet n°39
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -13.554758663514091
+Différence d'énergie (Delta E) : 0.7866848369295596
+Probabilité d'accepter : 0.0070 (Tirage du hasard : 0.0249)
+=> Résultat : REFUSÉ 
+
+--- Itération 82 ---
+Température : 0.1549
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -14.341443500443651
+Action proposée : Flipper l'objet n°29
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -13.59921650361134
+Différence d'énergie (Delta E) : 0.7422269968323114
+Probabilité d'accepter : 0.0083 (Tirage du hasard : 0.4972)
+=> Résultat : REFUSÉ 
+
+--- Itération 83 ---
+Température : 0.1514
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -14.341443500443651
+Action proposée : Flipper l'objet n°39
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -13.554758663514091
+Différence d'énergie (Delta E) : 0.7866848369295596
+Probabilité d'accepter : 0.0055 (Tirage du hasard : 0.9948)
+=> Résultat : REFUSÉ 
+
+--- Itération 84 ---
+Température : 0.1479
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -14.341443500443651
+Action proposée : Flipper l'objet n°24
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -13.553548802536833
+Différence d'énergie (Delta E) : 0.7878946979068182
+Probabilité d'accepter : 0.0049 (Tirage du hasard : 0.3515)
+=> Résultat : REFUSÉ 
+
+--- Itération 85 ---
+Température : 0.1445
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -14.341443500443651
+Action proposée : Flipper l'objet n°34
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -13.422784149642466
+Différence d'énergie (Delta E) : 0.9186593508011853
+Probabilité d'accepter : 0.0017 (Tirage du hasard : 0.4414)
+=> Résultat : REFUSÉ 
+
+--- Itération 86 ---
+Température : 0.1413
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -14.341443500443651
+Action proposée : Flipper l'objet n°39
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -13.554758663514091
+Différence d'énergie (Delta E) : 0.7866848369295596
+Probabilité d'accepter : 0.0038 (Tirage du hasard : 0.9988)
+=> Résultat : REFUSÉ 
+
+--- Itération 87 ---
+Température : 0.1380
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -14.341443500443651
+Action proposée : Flipper l'objet n°14
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -13.622124201352625
+Différence d'énergie (Delta E) : 0.7193192990910262
+Probabilité d'accepter : 0.0055 (Tirage du hasard : 0.4794)
+=> Résultat : REFUSÉ 
+
+--- Itération 88 ---
+Température : 0.1349
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -14.341443500443651
+Action proposée : Flipper l'objet n°19
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -13.670591229725657
+Différence d'énergie (Delta E) : 0.6708522707179938
+Probabilité d'accepter : 0.0069 (Tirage du hasard : 0.5325)
+=> Résultat : REFUSÉ 
+
+--- Itération 89 ---
+Température : 0.1318
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -14.341443500443651
+Action proposée : Flipper l'objet n°38
+Etat x' voisin: [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -13.4709390952795
+Différence d'énergie (Delta E) : 0.8705044051641515
+Probabilité d'accepter : 0.0014 (Tirage du hasard : 0.3067)
+=> Résultat : REFUSÉ 
+
+--- Itération 90 ---
+Température : 0.1288
+Etat x actuel : [0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -14.341443500443651
+Action proposée : Flipper l'objet n°5
+Etat x' voisin: [0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -14.065130498584276
+Différence d'énergie (Delta E) : 0.2763130018593749
+Probabilité d'accepter : 0.1171 (Tirage du hasard : 0.0582)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 91 ---
+Température : 0.1259
+Etat x actuel : [0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0] | Énergie : -14.065130498584276
+Action proposée : Flipper l'objet n°47
+Etat x' voisin: [0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0] | Énergie : -14.751642289628867
+Différence d'énergie (Delta E) : -0.686511791044591
+Probabilité d'accepter : 1.0000 (Tirage du hasard : 0.6629)
+=> Résultat : ACCEPTÉ 
+
+--- Itération 92 ---
+Température : 0.1230
+Etat x actuel : [0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0] | Énergie : -14.751642289628867
+Action proposée : Flipper l'objet n°34
+Etat x' voisin: [0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0] | Énergie : -13.832982938827682
+Différence d'énergie (Delta E) : 0.9186593508011853
+Probabilité d'accepter : 0.0006 (Tirage du hasard : 0.0903)
+=> Résultat : REFUSÉ 
+
+--- Itération 93 ---
+Température : 0.1202
+Etat x actuel : [0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0] | Énergie : -14.751642289628867
+Action proposée : Flipper l'objet n°39
+Etat x' voisin: [0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0] | Énergie : -13.964957452699307
+Différence d'énergie (Delta E) : 0.7866848369295596
+Probabilité d'accepter : 0.0014 (Tirage du hasard : 0.0177)
+=> Résultat : REFUSÉ 
+
+--- Itération 94 ---
+Température : 0.1175
+Etat x actuel : [0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0] | Énergie : -14.751642289628867
+Action proposée : Flipper l'objet n°34
+Etat x' voisin: [0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0] | Énergie : -13.832982938827682
+Différence d'énergie (Delta E) : 0.9186593508011853
+Probabilité d'accepter : 0.0004 (Tirage du hasard : 0.7394)
+=> Résultat : REFUSÉ 
+
+--- Itération 95 ---
+Température : 0.1148
+Etat x actuel : [0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0] | Énergie : -14.751642289628867
+Action proposée : Flipper l'objet n°42
+Etat x' voisin: [0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0] | Énergie : -13.81102512882402
+Différence d'énergie (Delta E) : 0.9406171608048464
+Probabilité d'accepter : 0.0003 (Tirage du hasard : 0.8429)
+=> Résultat : REFUSÉ 
+
+--- Itération 96 ---
+Température : 0.1122
+Etat x actuel : [0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0] | Énergie : -14.751642289628867
+Action proposée : Flipper l'objet n°24
+Etat x' voisin: [0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0] | Énergie : -13.963747591722049
+Différence d'énergie (Delta E) : 0.7878946979068182
+Probabilité d'accepter : 0.0009 (Tirage du hasard : 0.8851)
+=> Résultat : REFUSÉ 
+
+--- Itération 97 ---
+Température : 0.1096
+Etat x actuel : [0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0] | Énergie : -14.751642289628867
+Action proposée : Flipper l'objet n°42
+Etat x' voisin: [0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0] | Énergie : -13.81102512882402
+Différence d'énergie (Delta E) : 0.9406171608048464
+Probabilité d'accepter : 0.0002 (Tirage du hasard : 0.1145)
+=> Résultat : REFUSÉ 
+
+--- Itération 98 ---
+Température : 0.1072
+Etat x actuel : [0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0] | Énergie : -14.751642289628867
+Action proposée : Flipper l'objet n°39
+Etat x' voisin: [0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0] | Énergie : -13.964957452699307
+Différence d'énergie (Delta E) : 0.7866848369295596
+Probabilité d'accepter : 0.0006 (Tirage du hasard : 0.8149)
+=> Résultat : REFUSÉ 
+
+--- Itération 99 ---
+Température : 0.1047
+Etat x actuel : [0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0] | Énergie : -14.751642289628867
+Action proposée : Flipper l'objet n°39
+Etat x' voisin: [0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0] | Énergie : -13.964957452699307
+Différence d'énergie (Delta E) : 0.7866848369295596
+Probabilité d'accepter : 0.0005 (Tirage du hasard : 0.8660)
+=> Résultat : REFUSÉ 
+
+--- Itération 100 ---
+Température : 0.1023
+Etat x actuel : [0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0] | Énergie : -14.751642289628867
+Action proposée : Flipper l'objet n°8
+Etat x' voisin: [0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0] | Énergie : -13.869849792300718
+Différence d'énergie (Delta E) : 0.8817924973281492
+Probabilité d'accepter : 0.0002 (Tirage du hasard : 0.6312)
+=> Résultat : REFUSÉ 
+
+=== FIN DE L'OPTIMISATION ===
+Meilleure énergie trouvée : -14.751642289628867

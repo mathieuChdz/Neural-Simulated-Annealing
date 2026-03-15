@@ -9,9 +9,28 @@ from es_agent import ESAgent
 
 
 SEED = 42
+SEEDS = [random.randint(0, 10000) for _ in range(5)]
+SEEDS_CUSTOM = [3322, 8092, 973, 4669, 62]
 random.seed(SEED)
 np.random.seed(SEED)
 
+def generer_probleme(nb_objets, seed=None, nsa=False):
+    """Génère un problème de Knapsack consistant pour une seed donnée."""
+    if seed is not None:
+        random.seed(seed)
+        np.random.seed(seed)
+        
+    poids = [random.uniform(0, 1) for _ in range(nb_objets)]
+    valeurs = [random.uniform(0, 1) for _ in range(nb_objets)]
+
+    if nb_objets == 50 or nb_objets == 100:
+        capacite_max = nb_objets / 4.0
+    else:
+        capacite_max = nb_objets / 8.0
+
+    if nsa:
+        return kpnsa(poids, valeurs, capacite_max)
+    return kp(poids, valeurs, capacite_max)
 
 def run_SA(nb_objets):
     poids = [random.uniform(0, 1) for _ in range(nb_objets)]
@@ -23,9 +42,10 @@ def run_SA(nb_objets):
     meilleur_etat_global = None
 
     for i in range(5):
+        probleme = generer_probleme(nb_objets, seed=SEEDS_CUSTOM[i], nsa=False)
         sa = SimulatedAnnealing(probleme, initial_temp=1.0, final_temp=0.1, n_steps=5000)
         meilleur_etat, meilleure_energie, _ = sa.solve(log_filename=f"journal_sa_run_{i+1}.txt")
-        print(f"Run {i+1} | Meilleure énergie : {-meilleure_energie:.4f}")
+        print(f"Run {i+1} | Meilleure énergie : {-meilleure_energie:.4f} | Random Seed: {SEEDS_CUSTOM[i]}")
         res_sum += -meilleure_energie
         meilleur_etat_global = meilleur_etat
     
@@ -61,9 +81,10 @@ def run_NSA(nb_objets):
     meilleur_etat_global = None
 
     for i in range(5):
-        sa = SimulatedAnnealing(probleme, initial_temp=1.0, final_temp=0.1, n_steps=2000, agent=agent)
+        probleme = generer_probleme(nb_objets, seed=SEEDS_CUSTOM[i], nsa=True)
+        sa = SimulatedAnnealing(probleme, initial_temp=1.0, final_temp=0.1, n_steps=1000, agent=agent)
         meilleur_etat, meilleure_energie, _ = sa.solve(log_filename=f"journal_nsa_run_{i+1}.txt")
-        print(f"Run {i+1} | Meilleure énergie : {-meilleure_energie:.4f}")
+        print(f"Run {i+1} | Meilleure énergie : {-meilleure_energie:.4f} | Random Seed: {SEEDS_CUSTOM[i]}")
         res_sum += -meilleure_energie
         meilleur_etat_global = meilleur_etat
     
@@ -97,9 +118,10 @@ def run_ES(nb_objets):
     meilleur_etat_global = None
 
     for i in range(5):
+        probleme = generer_probleme(nb_objets, seed=SEEDS_CUSTOM[i], nsa=False)
         sa_es = SimulatedAnnealing(probleme, initial_temp=100.0, final_temp=0.1, n_steps=n_steps_sa, agent=mon_agent_es)
         meilleur_etat_es, meilleure_energie_es, _ = sa_es.solve(log_filename=f"journal_es_run_{i+1}.txt")
-        print(f"Run {i+1} | Meilleure énergie : {-meilleure_energie_es:.4f}")
+        print(f"Run {i+1} | Meilleure énergie : {-meilleure_energie_es:.4f} | Random Seed: {SEEDS_CUSTOM[i]}")
         res_sum += -meilleure_energie_es
         meilleur_etat_global = meilleur_etat_es
 
