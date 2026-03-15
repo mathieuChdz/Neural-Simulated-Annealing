@@ -17,9 +17,9 @@ from agents.ppo import PPOAgent
 
 # ===== Paramètres =====
 
-SIZES = [50, 100]
+SIZES = [50, 100, 200]   # tailles à tester
 
-N_INSTANCES = 20
+N_INSTANCES = 26
 N_STEPS = 1000
 
 BIN_CAPACITY = 1

@@ -78,12 +78,12 @@ class PPOAgent:
 
             clipped_ratio = torch.clamp(ratio, 1 - epsilon, 1 + epsilon)
 
-            #loss = -torch.min(              ratio * rewards,              clipped_ratio * rewards          ).mean()
+            loss = -torch.min(              ratio * rewards,              clipped_ratio * rewards          ).mean()
 
             # version sans clipping
-            ratio = torch.exp(log_probs - old_log_probs)
+            #ratio = torch.exp(log_probs - old_log_probs)
 
-            loss = -(ratio * rewards).mean()
+            #loss = -(ratio * rewards).mean()
 
             self.optimizer.zero_grad()
             loss.backward()

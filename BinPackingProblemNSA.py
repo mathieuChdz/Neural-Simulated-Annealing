@@ -40,7 +40,7 @@ class BinPackingProblemNSA(NSAProblem):
         new_state = state.copy()
         new_state[i] = j
 
-        # vérification capacité
+        
         loads = self.compute_bin_loads(new_state)
 
         if loads[j] > self.capacity:

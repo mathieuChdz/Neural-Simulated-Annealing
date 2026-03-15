@@ -16,8 +16,8 @@ N_ITEMS = 50
 N_BINS = N_ITEMS
 BIN_CAPACITY = 1
 
-EPOCHS = 500              
-PROBLEMS_PER_EPOCH = 72   
+EPOCHS = 1000              
+PROBLEMS_PER_EPOCH = 100   
 ROLLOUT_STEPS = 100       
 
 
@@ -66,7 +66,7 @@ def train():
             best_state, best_energy = sa.solve()
 
         if epoch % 5 == 0:
-            print(f"Epoch {epoch}/{EPOCHS}")
+            print(f"Epoch {epoch}/{EPOCHS} energy={best_energy}")
 
     agent.save(MODEL_PATH)
 
