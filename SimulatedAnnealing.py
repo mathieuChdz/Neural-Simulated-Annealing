@@ -14,7 +14,7 @@ class SimulatedAnnealing:
 
     def solve(self, log_filename="journal_sa.txt"):
         current_state = self.problem.etat_initial()
-        current_energy = self.problem.get_energy(current_state)
+        current_energy = self.problem.energy(current_state)
         
         best_state = current_state
         best_energy = current_energy
@@ -34,13 +34,19 @@ class SimulatedAnnealing:
             for k in range(self.n_steps):
                 
                 if self.agent is not None:
-                    voisin, action = self.agent.voisinage(current_state, self.problem)
+                    temp_norm = temp / self.initial_temp
+                    state_tensor = self.problem.state_to_tensor(current_state, temp_norm)
+
+                    action, log_prob, value = self.agent.act(state_tensor)
+
+                    voisin = self.problem.apply_action(current_state, action)
+                    
                 else:
                     voisin, action = self.problem.voisinage(current_state)
 
 
 
-                voisin_energy = self.problem.get_energy(voisin)
+                voisin_energy = self.problem.energy(voisin)
                 
                 delta_e = voisin_energy - current_energy
                 
@@ -75,13 +81,15 @@ class SimulatedAnnealing:
 
                 if self.agent is not None:
                     if accepte:
-                        recompense = -delta_e
+                        reward = current_energy - voisin_energy
                         next_state = voisin
                     else:
-                        recompense = -10000
+                        reward = 0
                         next_state = current_state
 
-                    self.agent.learn(current_state, action, recompense, next_state, self.problem)
+                    is_done = (k == self.n_steps - 1)
+
+                    self.agent.store(state_tensor, action, log_prob, reward, value, is_done)
             
 
                 if accepte:
@@ -96,6 +104,10 @@ class SimulatedAnnealing:
                     f.write("=> Résultat : REFUSÉ \n\n")
                 history_energy.append(current_energy)
                 temp *= self.alpha 
+
+            
+            # if self.agent is not None:
+            #     self.agent.update()
                 
             f.write("=== FIN DE L'OPTIMISATION ===\n")
             f.write(f"Meilleure énergie trouvée : {best_energy}\n")
