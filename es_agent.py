@@ -74,8 +74,8 @@ class ESAgent:
 
         R = np.array(self.rewards)
         
-        # Normalisation des recompenses (Fitness shaping, crucial en ES)
-        if np.std(R) != 0:
+        # Normalisation des recompenses z score
+        if np.std(R) != 0: # ecart type 
             A = (R - np.mean(R)) / np.std(R)
         else:
             A = np.zeros_like(R)
